@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record id="mp_booking_inherit_marketplace_base_config_settings_form_view" model="ir.ui.view">
+            <field name="name">Marketplace.base.config.setting.mp.booking.inherit</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="odoo_marketplace.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='mp_approval_settings']" position="inside">
+                    <div class="col-xs-12 col-md-6 o_setting_box" title="Enable this if you want to approve timeslots automatically.">
+                        <div class="o_setting_left_pane">
+                            <field name="mp_auto_timeslot_approve" class="oe_inline" help="Enable this if you want to approve timeslots automatically."/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="mp_auto_timeslot_approve" string="Booking Timeslot Approval"/>
+                            <div class="text-muted">
+                                ⇒ If it is enabled then all seller's timeslot will be automatically approved.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 o_setting_box" title="Enable this if you want to approve booking plan automatically.">
+                        <div class="o_setting_left_pane">
+                            <field name="mp_auto_plan_approve" class="oe_inline" help="Enable this if you want to approve booking plan automatically."/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="mp_auto_plan_approve" string="Booking Plan Approval"/>
+                            <div class="text-muted">
+                                ⇒ If it is enabled then all seller's booking plan will be automatically approved.
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

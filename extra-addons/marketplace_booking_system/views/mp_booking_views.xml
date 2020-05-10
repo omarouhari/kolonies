@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <record model="ir.ui.menu" id="website_booking_system.wk_booking_menu_root">
+            <field name="groups_id" eval="[(6,0,[ref('odoo_marketplace.marketplace_officer_group')])]"/>
+        </record>
+
+        <record id= "mp_booking_product_form_view" model= "ir.ui.view">
+            <field name="name">marketplace.booking.product.form</field>
+            <field name="model">product.template</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button string="Check Booking Quantity" type="object" name="get_available_bk_qty" attrs="{'invisible':[('is_booking_type','=',False)]}"/>
+                </xpath>
+                <field name="public_categ_ids" position="after">
+                    <div>
+                        <field name="is_booking_type"/>
+                        <label for="is_booking_type"/>
+                    </div>
+               </field>
+                <xpath expr="//notebook" position="inside">
+                    <page name="booking_and_reservation" string="Booking &amp; Reservation" attrs="{'invisible':[('is_booking_type','=',False)]}">
+                        <group>
+                            <group>
+                                <field name="br_start_date" widget="date" options='{"format": "dd/MM"}' attrs="{'required' : [('is_booking_type','=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="br_end_date" attrs="{'required' : [('is_booking_type','=',True)]}"/>
+                            </group>
+                        </group>
+                        <group string="Configure Day Slots">
+                            <field name="booking_day_slot_ids" nolabel="1"/>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="max_bk_qty"/>
+                            </group>
+                            <group/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_mp_booking_product_search_view" model="ir.ui.view">
+            <field name="name">marketplace.booking.product.search.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_product_template_seller_filter"/>
+            <field name="arch"  type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Booking Product"
+                        domain="[('is_booking_type','=',True)]"
+                        name="mp_booking_product"
+                        />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mp_inherit_wk_seller_product_order_line_search_view" model="ir.ui.view">
+            <field name="name">Booking Order Line</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_order_line_search_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Booking Order"
+                        domain="[('product_id.is_booking_type','=',True)]"
+                        name="mp_booking_order"
+                        />
+                    <filter name="booking_date_today" string="Today's Booking Order"
+                        domain="[('booking_date', '=', current_date)]"/>
+                </xpath>
+                <!-- <xpath expr="//search//group" position="inside">
+                    <filter name="group_booking_date" string="Booking Date" domain="[]" context="{'group_by':'booking_date'}"/>
+                    <filter name="group_booking_slot" string="Booking Slot" domain="[]" context="{'group_by':'booked_slot_id'}"/>
+                    <filter name="group_booking_plan" string="Booking Plan" domain="[]" context="{'group_by':'booked_plan_id'}"/>
+                </xpath> -->
+            </field>
+        </record>
+
+        <record id="mp_booking_inherit_wk_seller_product_order_line_form_view" model="ir.ui.view">
+            <field name="name">seller.product.sale.order.form.mp.booking.inherit</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="odoo_marketplace.wk_seller_product_order_line_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='name']" position="before">
+                    <group string="Booking Details" attrs="{'invisible':[('booking_date','=',False)]}">
+                        <group>
+                            <field name="booking_date" attrs="{'invisible':[('booking_date','=',False)]}"/>
+                                <field name="booked_slot_id" options="{'no_open':True,}" attrs="{'invisible':[('booking_date','=',False)]}"/>
+                        </group>
+                        <group>
+                            <field name="booked_plan_id" options="{'no_open':True,}" attrs="{'invisible':[('booking_date','=',False)]}"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem
+            name= "Booking &amp; Reservation"
+            id= "mp_booking_main_menu"
+            sequence= "7"
+            parent= "odoo_marketplace.wk_seller_dashboard"
+            groups= "odoo_marketplace.marketplace_seller_group"
+        />
+
+    </data>
+</odoo>

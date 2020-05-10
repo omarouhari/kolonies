@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : https://store.webkul.com/license.html/ -->
+<odoo>
+    <data>
+        <!-- ~~~~~~~~~~~~~ Approve all Booking Timeslots Server Action ~~~~~~~~~~~~~~~~~~~ -->
+
+        <record id="ir_actions_server_mp_approve_booking_timeslots" model="ir.actions.server">
+            <field name="name">Approve All Timesolts</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_booking_time_slot"/>
+            <field name="state">code</field>
+            <field name="code">
+                if records:
+                    action = records.action_approve_mp_booking_timeslots()
+            </field>
+            <field name="binding_model_id" ref="website_booking_system.model_booking_time_slot"/>
+        </record>
+
+        <!-- ~~~~~~~~~~~~~~ Inherit Booking Day Slot Config Form for Applying Domain ~~~~~~~~~~~~~~~  -->
+        <record id="mp_inherit_wk_booking_day_slot_config_Form_view" model="ir.ui.view">
+            <field name="name">Mp Inherit Booking Day Slot Config Form</field>
+            <field name="model">day.slot.config</field>
+            <field name="inherit_id" ref="website_booking_system.wk_booking_day_slot_config_Form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//field[@name='booking_slots_ids']//tree//field[@name='time_slot_id']" position="attributes">
+                    <attribute name="domain">[('state','in',['approved'])]</attribute>
+                    <attribute name="options">{'no_create_edit':True, 'no_open':True, 'no_quick_create':True}</attribute>
+                </xpath>
+                <xpath expr="//form//field[@name='booking_slots_ids']//tree//field[@name='plan_id']" position="attributes">
+                    <attribute name="options">{'no_create_edit':True, 'no_open':True, 'no_quick_create':True}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="mp_wk_booking_timeslot_tree_view" model="ir.ui.view">
+            <field name="name">Marketplace Booking Time Slot Tree</field>
+            <field name="model">booking.time.slot</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="100"/>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree string="Booking Time Slots" editable="top" decoration-info="state=='new'"
+                decoration-warning="state=='pending'" decoration-success="state=='approved'" decoration-danger="state=='rejected'">
+                    <field name="sequence" widget="handle" groups="odoo_marketplace.marketplace_officer_group"/>
+                    <field name="start_time" widget="float_time" attrs="{'readonly': [('state','not in',['new'])]}"/>
+                    <field name="end_time" widget="float_time" attrs="{'readonly': [('state','not in',['new'])]}"/>
+                    <field name="id" invisible="1"/>
+                    <field name="marketplace_seller_id" string="Requested By"
+                        attrs="{'readonly': ['|',('state','not in',['new']),('id','!=',False)]}"
+                        options="{'no_create_edit':True, 'no_open':True, 'no_quick_create':True}"
+                        invisible="not (context.get('mp_new_booking') or context.get('mp_approved_booking'))"
+                        required="context.get('mp_new_booking') or context.get('mp_approved_booking')"
+                        groups="odoo_marketplace.marketplace_officer_group"
+                        domain="[('seller','=',True),('state','=','approved')]"
+                        />
+                    <field name="state" readonly="1"
+                        invisible="not (context.get('mp_new_booking') or context.get('mp_approved_booking'))"
+                        />
+                    <button name="button_set_pending_timeslot"
+                        type="object" aria-label="Request to Approve"
+                        class="text-primary btn-link fa fa-paper-plane" title="Request to Approve"
+                        invisible="not (context.get('mp_new_booking'))"
+                        attrs="{'invisible': [('state','in',['pending','approved'])]}"
+                        />
+                    <button name="button_approve_timeslot"
+                        type="object"  aria-label="Click to Approve"
+                        class="text-success btn-link fa fa-check-circle" title="Click to Approve"
+                        invisible="not (context.get('mp_new_booking'))"
+                        attrs="{'invisible': [('state','in',['approved','rejected','new'])]}"
+                        groups="odoo_marketplace.marketplace_officer_group"
+                        />
+                    <button name="button_reject_timeslot"
+                        type="object"  aria-label="Click to Reject"
+                        class="text-danger btn-link fa fa-times-circle" title="Click to Reject"
+                        invisible="not (context.get('mp_new_booking') or context.get('mp_approved_booking'))"
+                        groups="odoo_marketplace.marketplace_officer_group"
+                        attrs="{'invisible': ['|',('state','in',['rejected','new']),('marketplace_seller_id','=',False)]}"
+                        />
+                </tree>
+            </field>
+        </record>
+
+        <record id="mp_booking_timeslots_new_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Booking New TimeSlots</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.time.slot</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="domain">[('state','in',['new','pending','rejected'])]</field>
+            <field name="context">{"mp_new_booking":1,}
+            </field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+              <p>
+                Here is a list of all the new booking timeslots created by sellers of marketplace. You
+                can click on any record to get the detailed Information About these timeslots.
+              </p>
+            </field>
+            <field
+                name="view_ids"
+                eval="[
+                (5, 0, 0),
+                (0, 0, {'sequence': 1, 'view_mode': 'tree', 'view_id': ref('mp_wk_booking_timeslot_tree_view')}),
+            ]"/>
+        </record>
+
+        <record id="mp_booking_timeslots_approved_action" model="ir.actions.act_window">
+            <field name="name">Marketplace Booking Approved TimeSlots</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">booking.time.slot</field>
+            <!-- <field name="view_type">form</field> -->
+            <field name="domain">[('state','in',['approved'])]</field>
+            <field name="context">{"mp_approved_booking":1,}
+            </field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+              <p>
+                Here is a list of all the approved booking timeslots created by sellers of marketplace. You
+                can click on any record to get the detailed Information About these TimeSlots.
+              </p>
+            </field>
+            <field
+                name="view_ids"
+                eval="[
+                (5, 0, 0),
+                (0, 0, {'sequence': 1, 'view_mode': 'tree', 'view_id': ref('mp_wk_booking_timeslot_tree_view')}),
+            ]"/>
+        </record>
+
+        <menuitem
+            name= "Time Slots"
+            id= "mp_booking_timeslots_main_menu"
+            sequence= "2"
+            parent= "marketplace_booking_system.mp_booking_main_menu"
+            groups= "odoo_marketplace.marketplace_seller_group"
+        />
+
+        <menuitem
+            name= "Non-Approved"
+            id= "mp_booking_timeslots_new_menu"
+            sequence= "1"
+            action= "marketplace_booking_system.mp_booking_timeslots_new_action"
+            parent= "marketplace_booking_system.mp_booking_timeslots_main_menu"
+            groups= "odoo_marketplace.marketplace_seller_group"
+        />
+
+        <menuitem
+            name= "Approved"
+            id= "mp_booking_timeslots_approved_menu"
+            sequence= "2"
+            action= "marketplace_booking_system.mp_booking_timeslots_approved_action"
+            parent= "marketplace_booking_system.mp_booking_timeslots_main_menu"
+            groups= "odoo_marketplace.marketplace_seller_group"
+        />
+
+    </data>
+</odoo>

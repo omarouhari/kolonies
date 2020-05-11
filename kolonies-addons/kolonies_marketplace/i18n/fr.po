@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kolonies_marketplace
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-11 16:07+0000\n"
+"PO-Revision-Date: 2020-05-11 16:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__resume_line_ids
+msgid "Diplomas"
+msgstr "Diplômes"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_employee_skill__employee_id
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_resume_line__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
+msgid "Locations Served"
+msgstr "Localisations desservies"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__professional
+msgid "Professional"
+msgstr "Professionnel"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_hr_resume_line
+msgid "Resumé line of an employee"
+msgstr "Diplôme de Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_employee_skill__partner_id
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_resume_line__partner_id
+msgid "Seller"
+msgstr "Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__partner_type
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__partner_type
+msgid "Seller Type"
+msgstr "Type de vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_hr_employee_skill
+msgid "Skill level for an employee"
+msgstr "Niveau de compétence pour un vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__skill_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__skill_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
+msgid "Skills"
+msgstr "Compétences"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__lang_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__lang_ids
+msgid "Spoken Languages"
+msgstr "Langues parlées"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__student
+msgid "University Student"
+msgstr "Étudiant universitaire"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__website_category_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__website_category_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
+msgid "Website Categories"
+msgstr "Catégories dans Site Web"

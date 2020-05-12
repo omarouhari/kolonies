@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-11 16:07+0000\n"
-"PO-Revision-Date: 2020-05-11 16:07+0000\n"
+"POT-Creation-Date: 2020-05-12 14:38+0000\n"
+"PO-Revision-Date: 2020-05-12 14:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Address"
+msgstr "Adresse"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "City"
+msgstr "Ville"
+
+#. module: kolonies_marketplace
 #: model:ir.model,name:kolonies_marketplace.model_res_partner
 msgid "Contact"
 msgstr "Contact"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Country"
+msgstr "Pays"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__resume_line_ids
@@ -32,9 +47,32 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Internal notes..."
+msgstr "Notes internes ..."
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Localisation Name"
+msgstr "Nom de la localisation"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Localisation Served"
+msgstr "Localisation desservie"
+
+#. module: kolonies_marketplace
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
 msgid "Locations Served"
 msgstr "Localisations desservies"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__neighborhood
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__neighborhood
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
+msgid "Neighborhood"
+msgstr "Quartier"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__professional
@@ -77,6 +115,16 @@ msgid "Spoken Languages"
 msgstr "Langues parlées"
 
 #. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Street 2..."
+msgstr "Rue 2 ..."
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "Street..."
+msgstr "Rue ..."
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__student
 msgid "University Student"
 msgstr "Étudiant universitaire"
@@ -87,3 +135,8 @@ msgstr "Étudiant universitaire"
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
 msgid "Website Categories"
 msgstr "Catégories dans Site Web"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+msgid "ZIP"
+msgstr "Code postal"

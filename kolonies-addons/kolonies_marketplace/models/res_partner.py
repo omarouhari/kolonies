@@ -12,3 +12,4 @@ class ResPartner(models.Model):
     skill_ids = fields.One2many('hr.employee.skill', 'partner_id', 'Skills')
     website_category_ids = fields.Many2many('product.public.category', 'product_category_seller_rel', 'partner_id', 'category_id',
                                             'Website Categories')
+    neighborhood = fields.Char('Neighborhood')

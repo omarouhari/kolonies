@@ -9,9 +9,9 @@
 			<field name="arch" type="xml">
 				
 				<field name="type" position="before">
-					<field name="seller_review_ids" invisible="0"/>
-					<field name="sales_count_stored" invisible="0"/>
-					<field name="average_rating" invisible="0"/>
+					<field name="seller_review_ids" invisible="1"/>
+					<field name="sales_count_stored" invisible="1"/>
+					<field name="average_rating" invisible="1"/>
 				</field>
 			
 			</field>

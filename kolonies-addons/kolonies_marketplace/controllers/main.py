@@ -15,10 +15,9 @@ class WebsiteSale(WebsiteSale):
 					[('name', 'ilike', srch)],
 					[('product_variant_ids.default_code', 'ilike', srch)],
 					[('marketplace_seller_id.partner_type', 'ilike', srch)],
-					[('marketplace_seller_id.lang_ids.name', 'ilike', srch)],
-					[('marketplace_seller_id.child_ids.city', 'ilike', srch)],
-					[('marketplace_seller_id.child_ids.neighborhood', 'ilike', srch)],
-					[('marketplace_seller_id.child_ids.country_id.name', 'ilike', srch)],
+					[('marketplace_seller_id.localisation_ids.city', 'ilike', srch)],
+					[('marketplace_seller_id.localisation_ids.neighborhood', 'ilike', srch)],
+					[('marketplace_seller_id.localisation_ids.country_id.name', 'ilike', srch)],
 					[('marketplace_seller_id.seller_level', 'ilike', srch)],
 				]
 

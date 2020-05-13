@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<record id="seller_localisation_view_form" model="ir.ui.view">
+			<field name="name">seller.localisation.view.form</field>
+			<field name="model">seller.localisation</field>
+			<field name="arch" type="xml">
+				<form string="Localisation Served">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" invisible="1"/>
+								<label for="city" string="Localisation"/>
+								<div>
+									<div class="o_address_format" name="div_address">
+										<field name="city" placeholder="City" style="width: 60%"/>
+										<field name="neighborhood" placeholder="Neighborhood" style="width: 39%"/>
+										<field name="country_id" placeholder="Country" options="{'no_open': True, 'no_create': True}"/>
+									</div>
+								</div>
+							</group>
+						</group>
+						<group/>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		
+		<record id="seller_localisation_view_tree" model="ir.ui.view">
+			<field name="name">seller.localisation.view.tree</field>
+			<field name="model">seller.localisation</field>
+			<field name="arch" type="xml">
+				<tree string="Localisations Served">
+					<field name="city"/>
+					<field name="neighborhood"/>
+					<field name="country_id"/>
+				</tree>
+			</field>
+		</record>
+	
+	</data>
+</odoo>

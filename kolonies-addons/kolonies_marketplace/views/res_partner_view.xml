@@ -9,7 +9,6 @@
 			<field name="arch" type="xml">
 				<field name="title" position="after">
 					<field name="partner_type"/>
-					<field name="lang_ids" widget="many2many_tags"/>
 				</field>
 				<xpath expr="//group[6]" position="after">
 					<div class="row">
@@ -41,9 +40,8 @@
 						<group name="website_categ_grp" string="Website Categories">
 							<field name="website_category_ids" widget="many2many_tags" nolabel="1"/>
 						</group>
-						<group name="location_served_grp" string="Locations Served">
-							<field name="child_ids" widget="many2many_tags" nolabel="1" domain="[('type', '=', 'other')]"
-							       context="{'default_parent_id': active_id, 'default_type': 'other', 'form_view_ref': 'kolonies_marketplace.res_partner_view_form'}"/>
+						<group name="localisation_served_grp" string="Localisations Served">
+							<field name="localisation_ids" widget="many2many_tags" nolabel="1" context="{'default_parent_id': active_id}"/>
 						</group>
 					</group>
 					<group>
@@ -60,36 +58,4 @@
 		</record>
 	</data>
 	
-	<record id="res_partner_view_form" model="ir.ui.view">
-		<field name="name">res.partner.view.form</field>
-		<field name="model">res.partner</field>
-		<field name="priority">500</field>
-		<field name="arch" type="xml">
-			<form string="Localisation Served">
-				<sheet>
-					<field name="type" required="1" widget="radio" options="{'horizontal': true}"/>
-					<field name="parent_id" invisible="1"/>
-					<hr/>
-					<group>
-						<group>
-							<field name="name" string="Localisation Name" attrs="{'required' : [('type', '=', 'other')]}"/>
-							<label for="street" string="Address"/>
-							<div>
-								<div class="o_address_format" name="div_address">
-									<field name="street" placeholder="Street..." class="o_address_street"/>
-									<field name="street2" placeholder="Street 2..." class="o_address_street"/>
-									<field name="city" placeholder="City" style="width: 40%"/>
-									<field name="neighborhood" placeholder="Neighborhood" style="width: 37%"/>
-									<field name="zip" placeholder="ZIP" style="width: 22%"/>
-									<field name="country_id" placeholder="Country" options="{'no_open': True, 'no_create': True}"/>
-								</div>
-							</div>
-							<field name="comment" placeholder="Internal notes..."/>
-						</group>
-					</group>
-					<group/>
-				</sheet>
-			</form>
-		</field>
-	</record>
 </odoo>

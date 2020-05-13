@@ -1,14 +1,14 @@
-id                               ,name                             ,model_id:id                        ,group_id:id                              ,perm_read,perm_write,perm_create,perm_unlink
-hr_employee_skill_access_reader  ,hr_employee_skill_access reader  ,hr_skills.model_hr_employee_skill  ,                                         ,1        ,0         ,0          ,0
-hr_resume_line_access_reader     ,hr_resume_line_access reader     ,hr_skills.model_hr_resume_line     ,                                         ,1        ,0         ,0          ,0
-hr_resume_line_type_access_reader,hr_resume_line_type_access reader,hr_skills.model_hr_resume_line_type,                                         ,1        ,0         ,0          ,0
-hr_skill_type_access_reader      ,hr_skill_type_access reader      ,hr_skills.model_hr_skill_type      ,                                         ,1        ,0         ,0          ,0
-hr_skill_access_reader           ,hr_skill_access reader           ,hr_skills.model_hr_skill           ,                                         ,1        ,0         ,0          ,0
-hr_skill_level_access_reader     ,hr_skill_level_access reader     ,hr_skills.model_hr_skill_level     ,                                         ,1        ,0         ,0          ,0
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_employee_skill_access_reader,hr_employee_skill_access reader,hr_skills.model_hr_employee_skill,,1,0,0,0
+hr_resume_line_access_reader,hr_resume_line_access reader,hr_skills.model_hr_resume_line,,1,0,0,0
+hr_resume_line_type_access_reader,hr_resume_line_type_access reader,hr_skills.model_hr_resume_line_type,,1,0,0,0
+hr_skill_type_access_reader,hr_skill_type_access reader,hr_skills.model_hr_skill_type,,1,0,0,0
+hr_skill_access_reader,hr_skill_access reader,hr_skills.model_hr_skill,,1,0,0,0
+hr_skill_level_access_reader,hr_skill_level_access reader,hr_skills.model_hr_skill_level,,1,0,0,0
 
-hr_employee_skill_access_user    ,hr_employee_skill_access user    ,hr_skills.model_hr_employee_skill  ,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
-hr_resume_line_access_user       ,hr_resume_line_access user       ,hr_skills.model_hr_resume_line     ,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
-hr_resume_line_type_access_user  ,hr_resume_line_type_access user  ,hr_skills.model_hr_resume_line_type,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
-hr_skill_type_access_user        ,hr_skill_type_access user        ,hr_skills.model_hr_skill_type      ,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
-hr_skill_access_user             ,hr_skill_access user             ,hr_skills.model_hr_skill           ,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
-hr_skill_level_access_user       ,hr_skill_level_access user       ,hr_skills.model_hr_skill_level     ,odoo_marketplace.marketplace_seller_group,1        ,1         ,1          ,0
+hr_employee_skill_access_user,hr_employee_skill_access user,hr_skills.model_hr_employee_skill,odoo_marketplace.marketplace_seller_group,1,1,1,0
+hr_resume_line_access_user,hr_resume_line_access user,hr_skills.model_hr_resume_line,odoo_marketplace.marketplace_seller_group,1,1,1,0
+hr_resume_line_type_access_user,hr_resume_line_type_access user,hr_skills.model_hr_resume_line_type,odoo_marketplace.marketplace_seller_group,1,1,1,0
+hr_skill_type_access_user,hr_skill_type_access user,hr_skills.model_hr_skill_type,odoo_marketplace.marketplace_seller_group,1,1,1,0
+hr_skill_access_user,hr_skill_access user,hr_skills.model_hr_skill,odoo_marketplace.marketplace_seller_group,1,1,1,0
+hr_skill_level_access_user,hr_skill_level_access user,hr_skills.model_hr_skill_level,odoo_marketplace.marketplace_seller_group,1,1,1,0

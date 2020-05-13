@@ -11,8 +11,11 @@
   'description': '',
   'depends': [
     'odoo_marketplace',
+    'hr_skills',
   ],
   'data': [
+    'views/template.xml',
+    'views/product_template_view.xml',
     'views/res_partner_view.xml',
   ],
   'application': False,

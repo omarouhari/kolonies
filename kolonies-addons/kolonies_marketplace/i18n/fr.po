@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-12 14:38+0000\n"
-"PO-Revision-Date: 2020-05-12 14:38+0000\n"
+"POT-Creation-Date: 2020-05-13 10:37+0000\n"
+"PO-Revision-Date: 2020-05-13 10:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,22 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
 msgid "Address"
 msgstr "Adresse"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__average_rating
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_template__average_rating
+msgid "Average Rating"
+msgstr "Note moyenne"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.kolonies_sort
+msgid "Average Rating: High to Low"
+msgstr "Note moyenne : décroissant"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.kolonies_sort
+msgid "Average Rating: Low to High"
+msgstr "Note moyenne : croissant"
 
 #. module: kolonies_marketplace
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
@@ -52,6 +68,16 @@ msgid "Internal notes..."
 msgstr "Notes internes ..."
 
 #. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__one
+msgid "Level One"
+msgstr "Niveau Un"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__two
+msgid "Level Two"
+msgstr "Niveau Deux"
+
+#. module: kolonies_marketplace
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
 msgid "Localisation Name"
 msgstr "Nom de la localisation"
@@ -75,6 +101,16 @@ msgid "Neighborhood"
 msgstr "Quartier"
 
 #. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__new
+msgid "New Seller"
+msgstr "Nouveau Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__professional
 msgid "Professional"
 msgstr "Professionnel"
@@ -85,10 +121,47 @@ msgid "Resumé line of an employee"
 msgstr "Diplôme de Vendeur"
 
 #. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__seller_review_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_template__seller_review_ids
+msgid "Review"
+msgstr "Revue"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__sol_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_template__sol_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__sol_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__sol_ids
+msgid "Sale Order Lines"
+msgstr "Lignes de commande"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__sales_count_stored
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_product_template__sales_count_stored
+msgid "Sales Count"
+msgstr "Nombre de ventes"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.kolonies_sort
+msgid "Sales count: High to Low"
+msgstr "Nombre de ventes : décroissant"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.kolonies_sort
+msgid "Sales count: Low to High"
+msgstr "Nombre de ventes : croissant"
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_employee_skill__partner_id
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_resume_line__partner_id
 msgid "Seller"
 msgstr "Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__seller_level
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__seller_level
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
+msgid "Seller Level"
+msgstr "Niveau Seller"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__partner_type
@@ -123,6 +196,11 @@ msgstr "Rue 2 ..."
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
 msgid "Street..."
 msgstr "Rue ..."
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__top_rated
+msgid "Top Rated Seller"
+msgstr "Meilleur Vendeur"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__student

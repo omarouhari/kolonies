@@ -46,6 +46,12 @@
 							       context="{'default_parent_id': active_id, 'default_type': 'other', 'form_view_ref': 'kolonies_marketplace.res_partner_view_form'}"/>
 						</group>
 					</group>
+					<group>
+						<group name="seller_level" string="Seller Level">
+							<field name="seller_level" nolabel="1"/>
+						</group>
+						<group/>
+					</group>
 				</xpath>
 				<field name="state_id" position="replace">
 					<field name="neighborhood" class="oe_no_button" placeholder="Neighborhood" style="width: 37%"/>

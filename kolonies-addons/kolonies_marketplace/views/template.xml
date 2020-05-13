@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<template id="kolonies_sort" inherit_id="website_sale.sort" customize_show="True" name="Kolonies Show Sort by">
+			<xpath expr="//t[@t-set='name_desc_label']" position="after">
+				<t t-set="sales_count_desc_label">Sales count: High to Low</t>
+				<t t-set="sales_count_asc_label">Sales count: Low to High</t>
+				<t t-set="average_rating_desc_label">Average Rating: High to Low</t>
+				<t t-set="average_rating_asc_label">Average Rating: Low to High</t>
+			</xpath>
+			<xpath expr="//t[@t-set='website_sale_sortable']" position="replace">
+				<t t-set="website_sale_sortable" t-value="[
+                (list_price_desc_label, 'list_price desc'),
+                (list_price_asc_label, 'list_price asc'),
+                (name_asc_label, 'name asc'),
+                (name_desc_label, 'name desc'),
+                (sales_count_desc_label, 'sales_count_stored desc'),
+                (sales_count_asc_label, 'sales_count_stored asc'),
+                (average_rating_desc_label, 'average_rating desc'),
+                (average_rating_asc_label, 'average_rating asc'),
+            ]"/>
+			</xpath>
+		</template>
+	
+	</data>
+</odoo>

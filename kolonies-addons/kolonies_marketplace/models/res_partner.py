@@ -13,3 +13,6 @@ class ResPartner(models.Model):
     website_category_ids = fields.Many2many('product.public.category', 'product_category_seller_rel', 'partner_id', 'category_id',
                                             'Website Categories')
     neighborhood = fields.Char('Neighborhood')
+    seller_level = fields.Selection([('new', 'New Seller'), ('one', 'Level One'), ('two', 'Level Two'), ('top_rated', 'Top Rated Seller')],
+                                    'Seller Level')
+    sol_ids = fields.One2many('sale.order.line', 'marketplace_seller_id', 'Sale Order Lines', readonly=True)

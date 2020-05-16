@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-  'name': 'Kolonies Multi Vendor Marketplace',
+  'name': 'Kolonies Website',
   'summary': '',
   'category': 'Website',
   'version': '1.0',
@@ -10,18 +10,13 @@
   'website': '',
   'description': '',
   'depends': [
-    'odoo_marketplace',
-    'hr_skills',
+    'kolonies_marketplace',
   ],
   'data': [
     # data
     # security
-    'security/ir.model.access.csv',
     # views
-    'views/template.xml',
     'views/templates.xml',
-    'views/res_partner_view.xml',
-    'views/seller_location_view.xml',
   ],
   'application': False,
   'installable': True,

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <template id="kolonies_search_shop" inherit_id="website_sale.products" name="Kolonies Shop Search">
+      <xpath expr="//div[hasclass('products_pager')]/t[@t-call][last()]" position="before">
+        <form method="get" class="o_wsale_products_searchbar_form o_wait_lazy_js s_wsale_products_searchbar_input mt-2 ml-md-2"
+              t-att-action="'/shop?search=%s&amp;skills=%s' % (search, skills)"
+              data-name="Products Search By Localisation Input">
+          <div role="search" class="input-group">
+            <input type="text" name="localisation" class="search-query form-control oe_search_box"
+                   placeholder="Search Localisation…" data-limit="5" t-att-value="localisation"
+                   data-display-description="true" data-display-price="true" data-display-image="true"/>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary oe_search_button" aria-label="Search Localisation" title="Search Localisation">
+                <i class="fa fa-search"/>
+              </button>
+            </div>
+          </div>
+          <input name="order" type="hidden" class="o_wsale_search_order_by" value=""/>
+          <input name="skills" type="hidden" t-att-value="skills"/>
+          <input name="search" type="hidden" t-att-value="search"/>
+        </form>
+        <form method="get" class="o_wsale_products_searchbar_form o_wait_lazy_js s_wsale_products_searchbar_input mt-2 ml-md-2"
+              t-att-action="'/shop?search=%s&amp;localisation=%s' % (search, localisation)"
+              data-name="Products Search Input By Skills">
+          <div role="search" class="input-group">
+            <input type="text" name="skills" class="search-query form-control oe_search_box" placeholder="Search Skills…"
+                   data-limit="5" t-att-value="skills"
+                   data-display-description="true" data-display-price="true" data-display-image="true"/>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-primary oe_search_button" aria-label="Search Skills" title="Search Skills">
+                <i class="fa fa-search"/>
+              </button>
+            </div>
+          </div>
+          <input name="order" type="hidden" class="o_wsale_search_order_by" value=""/>
+          <input name="localisation" type="hidden" t-att-value="localisation"/>
+          <input name="search" type="hidden" t-att-value="search"/>
+        </form>
+      </xpath>
+    </template>
+
+    <template id="kolonies_search_specific_filters" inherit_id="website.website_search_box" name="Kolonies Search Specific Filters">
+      <xpath expr="//input[hasclass('search-query', 'form-control', 'oe_search_box')]" position="after">
+        <input name="skills" type="hidden" t-att-value="skills"/>
+        <input name="localisation" type="hidden" t-att-value="localisation"/>
+      </xpath>
+    </template>
+
+  </data>
+</odoo>

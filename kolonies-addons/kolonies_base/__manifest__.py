@@ -15,6 +15,7 @@
   ],
   'data': [
     # security
+    'security/ir_rule.xml',
     'security/users_groups.xml',
     'security/ir.model.access.csv',
     # views
@@ -24,4 +25,5 @@
   'application': False,
   'installable': True,
   'auto_install': False,
+  'pre_init_hook': 'pre_init_no_update',
 }

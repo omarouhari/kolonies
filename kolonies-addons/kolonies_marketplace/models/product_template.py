@@ -28,4 +28,3 @@ class ProductTemplate(models.Model):
 					add += reviews_obj.rating
 				avg = add / len(record.seller_review_ids)
 			record.average_rating = (round(decimal.Decimal(abs(avg)), 2))
-			print(record.average_rating)

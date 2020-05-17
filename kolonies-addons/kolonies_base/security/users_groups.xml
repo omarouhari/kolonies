@@ -5,5 +5,10 @@
       <field name="name">Pending Buyer</field>
       <field name="category_id" ref="odoo_marketplace.marketplace_security_category"/>
     </record>
+
+    <record id="base.group_portal" model="res.groups">
+      <field name="implied_ids" eval="[(4, ref('marketplace_buyer_group'))]"/>
+    </record>
+
   </data>
 </odoo>

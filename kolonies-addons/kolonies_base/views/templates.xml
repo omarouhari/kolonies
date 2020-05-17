@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <template id="marketplace_dashboard_link" name="Link to Marketplace Dashboard" inherit_id="odoo_marketplace.marketplace_dashboard_link">
+      <xpath expr="//t[@t-if='website.env.user.sudo().partner_id.seller']" position="replace">
+          <a href="/my/marketplace"
+             class="dropdown-item"
+             role="menuitem"
+             groups="odoo_marketplace.marketplace_draft_seller_group,kolonies_base.marketplace_buyer_group">
+            Marketplace
+          </a>
+      </xpath>
+    </template>
+
+  </data>
+</odoo>

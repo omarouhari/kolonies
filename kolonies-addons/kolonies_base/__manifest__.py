@@ -1,25 +1,25 @@
 # -*- coding: utf-8 -*-
 {
-  'name': 'Kolonies Multi Vendor Marketplace',
+  'name': 'Kolonies Base',
   'summary': '',
-  'category': 'Website',
+  'category': 'Base',
   'version': '1.0',
-  'sequence': 1,
+  'sequence': -9,
   'author': 'Omar OUHARI',
   'license': 'Other proprietary',
   'website': '',
   'description': '',
   'depends': [
-    'kolonies_base',
+    'odoo_marketplace',
+    'hr_skills',
   ],
   'data': [
-    # data
     # security
+    'security/users_groups.xml',
     'security/ir.model.access.csv',
     # views
+    'views/menu.xml',
     'views/templates.xml',
-    'views/res_partner_view.xml',
-    'views/seller_location_view.xml',
   ],
   'application': False,
   'installable': True,

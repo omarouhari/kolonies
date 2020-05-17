@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="marketplace_buyer_group" model="res.groups">
+      <field name="name">Pending Buyer</field>
+      <field name="category_id" ref="odoo_marketplace.marketplace_security_category"/>
+    </record>
+  </data>
+</odoo>

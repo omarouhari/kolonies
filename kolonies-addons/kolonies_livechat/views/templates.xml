@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <template id="kolonies_seller_list_item" inherit_id="odoo_marketplace.seller_list_item" name="Kolonies Seller List Item">
+      <xpath expr="//div[hasclass('col-xs-5')]" position="replace">
+        <div class="col-xs-5" style="padding:0px">
+          <div style="">
+            <a itemprop="url"
+               t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}">
+              <span
+                  itemprop="image"
+                  t-field="seller_obj.sudo().profile_image"
+                  t-options="{'widget': 'image', 'style':'height: 100px;width: 100px;border: 5px solid;border-radius: 4px;border-color: rgb(73, 73, 73);', 'zoom': 'image', 'class':''}"
+                  t-att-alt="seller_obj.sudo().name"/>
+            </a>
+          </div>
+        </div>
+      </xpath>
+      <xpath expr="//a[hasclass('grid-seller-name')]" position="replace">
+        <a itemprop="name" class="grid-seller-name"
+           t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}"
+           t-field="seller_obj.sudo().name"/>
+      </xpath>
+    </template>
+
+  </data>
+</odoo>

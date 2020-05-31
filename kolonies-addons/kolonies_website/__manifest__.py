@@ -18,6 +18,7 @@
     'security/res_groups.xml',
     # views
     'views/templates.xml',
+    'views/seller_templates.xml',
   ],
   'application': False,
   'installable': True,

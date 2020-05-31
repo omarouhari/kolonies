@@ -10,6 +10,7 @@
   'website': '',
   'description': '',
   'depends': [
+    'hr',
     'kolonies_base',
   ],
   'data': [

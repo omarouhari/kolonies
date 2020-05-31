@@ -15,6 +15,7 @@
   'data': [
     # data
     # security
+    'security/res_groups.xml',
     # views
     'views/templates.xml',
   ],

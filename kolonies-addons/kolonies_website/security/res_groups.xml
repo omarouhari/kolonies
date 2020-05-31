@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="base.group_portal" model="res.groups">
+      <field name="implied_ids" eval="[(4, ref('website.group_multi_website'))]"/>
+    </record>
+
+  </data>
+</odoo>

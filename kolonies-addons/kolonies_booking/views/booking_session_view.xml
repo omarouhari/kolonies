@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+
+    <record id="booking_session_form_view" model="ir.ui.view">
+      <field name="name">booking.session.form.view</field>
+      <field name="model">booking.session</field>
+      <field name="arch" type="xml">
+        <form string="Booking Session">
+          <header>
+            <button name="button_plan" string="Plan" type="object" states="draft" class="btn-primary"/>
+            <button name="button_confirm" string="Confirm" type="object" states="planed" class="btn-primary"/>
+            <button name="button_start" string="Start" type="object" states="confirmed" class="btn-primary"/>
+            <button name="button_finished" string="Finish" type="object" states="in_progress" class="btn-primary"/>
+            <button name="button_cancel"
+                    string="Cancel"
+                    type="object"
+                    states="draft,planned,confirmed,in_progress,finished"
+                    class="btn-secondary"/>
+            <button name="button_reset"
+                    string="Reset To Draft"
+                    type="object"
+                    states="cancelled"
+                    class="btn-secondary"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <label for="name"/>
+              <h1>
+                <field name="name" placeholder="Title"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <field name="booking_slot_id"/>
+                <field name="seller_id"/>
+                <field name="product_id"/>
+                <field name="page_uuid"/>
+                <field name="page_web_url"/>
+              </group>
+              <group>
+                <field name="day"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+              </group>
+            </group>
+            <notebook>
+              <page name="attachment_pg" string="Documents">
+                <field name="attachment_ids" nolabel="1"/>
+              </page>
+              <page name="surveys_pg" string="Surveys">
+                <field name="survey_ids" nolabel="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="booking_session_tree_view" model="ir.ui.view">
+      <field name="name">booking.session.tree.view</field>
+      <field name="model">booking.session</field>
+      <field name="arch" type="xml">
+        <tree string="Booking Sessions">
+          <field name="name"/>
+          <field name="booking_slot_id"/>
+          <field name="seller_id"/>
+          <field name="product_id"/>
+          <field name="page_web_url"/>
+          <field name="day"/>
+          <field name="start_time"/>
+          <field name="end_time"/>
+          <field name="state"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="booking_session_search_view" model="ir.ui.view">
+      <field name="name">booking.session.search.view</field>
+      <field name="model">booking.session</field>
+      <field name="arch" type="xml">
+        <search string="Booking Session">
+          <field name="name"/>
+          <field name="booking_slot_id"/>
+          <field name="seller_id"/>
+          <field name="product_id"/>
+          <field name="page_web_url"/>
+          <field name="day"/>
+          <field name="start_time"/>
+          <field name="end_time"/>
+          <field name="state"/>
+          <group expand="1" string="Group By">
+            <filter string="Booking Slot" name="booking_slot_filter" domain="[]" context="{'group_by':'booking_slot_id'}"/>
+            <filter string="Seller" name="seller_filter" domain="[]" context="{'group_by':'seller_id'}"/>
+            <filter string="Product" name="product_filter" domain="[]" context="{'group_by':'product_id'}"/>
+            <filter string="State" name="state_filter" domain="[]" context="{'group_by':'state'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <record id="booking_session_act_window" model="ir.actions.act_window">
+      <field name="name">Booking Sessions</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">booking.session</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          There is no examples click here to add new ModelTitle.
+        </p>
+      </field>
+    </record>
+
+    <menuitem name="Booking Sessions"
+              id="booking_session_menu"
+              sequence="4"
+              parent="odoo_marketplace.wk_seller_dashboard"
+              action="booking_session_act_window"/>
+
+  </data>
+</odoo>

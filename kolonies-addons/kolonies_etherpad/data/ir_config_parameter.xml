@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="etherpad_endpoint" model="ir.config_parameter">
+      <field name="key">etherpad_endpoint</field>
+      <field name="value">https://localhost:9001</field>
+    </record>
+
+  </data>
+</odoo>

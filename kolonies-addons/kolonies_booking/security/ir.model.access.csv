@@ -3,3 +3,4 @@ access_booking_session_reader,access_booking_session reader,model_booking_sessio
 access_booking_session_user,access_booking_session user,model_booking_session,base.group_user,1,1,1,0
 access_booking_session_manager,access_booking_session manager,model_booking_session,base.group_erp_manager,1,1,1,1
 
+access_booking_config_user,access_booking_config user,website_booking_system.model_booking_config,base.group_user,1,0,0,0

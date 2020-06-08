@@ -14,5 +14,6 @@ class SaleOrder(models.Model):
     def create_booking_session(self):
         for line in self.mapped('order_line'):
             vals = line._prepare_booking_session_data()
-            self.env['booking.session'].create(vals)
+            session = self.env['booking.session'].create(vals)
+            line.write({'booking_session_id': session.id})
         return True

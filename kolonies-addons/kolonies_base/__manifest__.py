@@ -12,6 +12,7 @@
     'depends': [
         'odoo_marketplace',
         'hr_skills',
+        'contacts',
     ],
     'data': [
         # security

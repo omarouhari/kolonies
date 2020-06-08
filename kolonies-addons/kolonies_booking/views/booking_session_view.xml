@@ -2,6 +2,33 @@
 <odoo>
   <data noupdate="0">
 
+    <record id="booking_session_calendar_view" model="ir.ui.view">
+      <field name="name">booking.session.calendar.view</field>
+      <field name="model">booking.session</field>
+      <field name="arch" type="xml">
+        <calendar js_class="attendee_calendar"
+                  string="Booking Sessions"
+                  date_start="start"
+                  date_stop="stop"
+                  date_delay="duration"
+                  all_day="allday"
+                  event_open_popup="true"
+                  event_limit="5"
+                  color="state">
+          <field name="attendee_status"/>
+          <field name="partner_id"/>
+          <field name="state"/>
+          <field name="partner_ids"
+                 widget="many2many_tags_avatar"
+                 write_model="calendar.contacts"
+                 write_field="partner_id"
+                 avatar_field="image_128"/>
+          <field name="is_highlighted" invisible="1"/>
+          <field name="description"/>
+        </calendar>
+      </field>
+    </record>
+
     <record id="booking_session_form_view" model="ir.ui.view">
       <field name="name">booking.session.form.view</field>
       <field name="model">booking.session</field>
@@ -10,21 +37,26 @@
           <header>
             <button name="button_plan" string="Plan" type="object" states="draft" class="btn-primary"/>
             <button name="button_confirm" string="Confirm" type="object" states="planed" class="btn-primary"/>
-            <button name="button_start" string="Start" type="object" states="confirmed" class="btn-primary"/>
+            <button name="button_start" string="Start" type="object" states="open" class="btn-primary"/>
             <button name="button_finished" string="Finish" type="object" states="in_progress" class="btn-primary"/>
             <button name="button_cancel"
                     string="Cancel"
                     type="object"
-                    states="draft,planned,confirmed,in_progress,finished"
+                    states="draft,planned"
                     class="btn-secondary"/>
             <button name="button_reset"
                     string="Reset To Draft"
                     type="object"
-                    states="cancelled"
+                    states="plan,cancelled"
                     class="btn-secondary"/>
             <field name="state" widget="statusbar"/>
           </header>
           <sheet>
+            <div name="button_box" class="oe_button_box">
+              <button class="oe_stat_button" type="object" name="button_open_participant_open" icon="fa-users">
+                <field string="Participants" name="participant_count" widget="statinfo"/>
+              </button>
+            </div>
             <div class="oe_title">
               <label for="name"/>
               <h1>
@@ -41,8 +73,8 @@
               </group>
               <group>
                 <field name="day"/>
-                <field name="start_time"/>
-                <field name="end_time"/>
+                <field name="start"/>
+                <field name="stop"/>
               </group>
             </group>
             <notebook>
@@ -54,6 +86,11 @@
               </page>
             </notebook>
           </sheet>
+          <div class="oe_chatter">
+            <field name="message_follower_ids" widget="mail_followers"/>
+            <field name="activity_ids" widget="mail_activity"/>
+            <field name="message_ids" widget="mail_thread"/>
+          </div>
         </form>
       </field>
     </record>
@@ -104,7 +141,7 @@
       <field name="name">Booking Sessions</field>
       <field name="type">ir.actions.act_window</field>
       <field name="res_model">booking.session</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">calendar,tree,form</field>
       <field name="help" type="html">
         <p class="oe_view_nocontent_create">
           There is no examples click here to add new ModelTitle.

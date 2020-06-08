@@ -20,6 +20,7 @@
     # security
     'security/ir.model.access.csv',
     # views
+    'views/res_partner_view.xml',
     'views/booking_session_view.xml',
   ],
   'application': False,

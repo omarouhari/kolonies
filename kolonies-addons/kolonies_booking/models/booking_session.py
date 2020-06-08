@@ -11,14 +11,13 @@ class BookingSession(models.Model):
     _description = 'Booking Session'
 
     booking_slot_id = fields.Many2one('booking.slot', 'Booking Slot', required=True)
-    seller_id = fields.Many2one('res.partner', 'Seller', required=True)
     attachment_ids = fields.Many2many('ir.attachment', 'booking_session_attachment_rel', 'book_session_id', 'attachment_id', 'Documents')
     survey_ids = fields.Many2many('survey.survey', 'booking_session_survey_rel', 'book_session_id', 'survey_id', 'Surveys')
     state = fields.Selection([('draft', 'Draft'), ('planed', 'Planed'), ('open', 'Confirmed'), ('in_progress', 'In Progress'),
                               ('finished', 'Finished'), ('cancelled', 'Cancelled')], default='draft', required=True)
     page_uuid = fields.Char('Page UUID', required=False)
     page_web_url = fields.Char('Page Web Url', required=False, compute='_compute_page_web_url', store=True)
-    product_id = fields.Many2one(related='booking_slot_id.slot_config_id.product_id', readonly=True, store=True)
+    product_id = fields.Many2one('product.product', 'Product')
     day = fields.Selection(related='booking_slot_id.slot_config_id.name', readonly=True, store=True)
     start_time = fields.Float(related='booking_slot_id.time_slot_id.start_time', readonly=True, store=True)
     end_time = fields.Float(related='booking_slot_id.time_slot_id.end_time', realonly=True, store=True)
@@ -59,9 +58,7 @@ class BookingSession(models.Model):
     def create(self, vals):
         page_uuid = self._get_page_uuid()
         vals.update({'page_uuid': page_uuid, 'name': self.env['ir.sequence'].next_by_code('booking.session.seq')})
-        session = super(BookingSession, self).create(vals)
-        session.create_calendar_event()
-        return session
+        return super(BookingSession, self).create(vals)
 
     @api.model
     def _get_page_uuid(self):
@@ -78,6 +75,14 @@ class BookingSession(models.Model):
         action.update({'domain': [('id', 'in', self.partner_ids.ids)]})
         return action
 
+    @api.depends('partner_ids')
     def _compute_participant_count(self):
         for record in self:
             record.participant_count = len(record.partner_ids)
+
+    def add_participant(self, partner=False):
+        self.ensure_one()
+        if not partner:
+            return False
+        self.partner_ids = [(4, partner.id)]
+        return True

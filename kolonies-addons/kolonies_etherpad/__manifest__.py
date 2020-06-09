@@ -18,6 +18,8 @@
         'data/ir_sequence.xml',
         # security
         # views
+        'views/templates.xml',
+        'views/booking_session_view.xml',
     ],
     'application': False,
     'installable': True,

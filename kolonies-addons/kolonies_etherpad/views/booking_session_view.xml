@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="booking_session_form_view_inherit" model="ir.ui.view">
+      <field name="name">booking.session.form.view.inherit</field>
+      <field name="model">booking.session</field>
+      <field name="inherit_id" ref="kolonies_booking.booking_session_form_view"/>
+      <field name="arch" type="xml">
+
+        <group name="general_info" position="after">
+          <group name="iframe_etherpad_grp">
+            <field name="iframe_etherpad" widget="url"/>
+          </group>
+        </group>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

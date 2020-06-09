@@ -63,13 +63,13 @@
                 <field name="name" placeholder="Title"/>
               </h1>
             </div>
-            <group>
+            <group name="general_info">
               <group>
                 <field name="booking_slot_id"/>
                 <field name="partner_id"/>
                 <field name="product_id"/>
                 <field name="page_uuid"/>
-                <field name="page_web_url"/>
+                <field name="page_web_url" widget="url"/>
               </group>
               <group>
                 <field name="start"/>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from datetime import datetime, time
+from datetime import datetime
 from odoo import api, fields, models, _
 from odoo.addons.kolonies_base.models.tools import convert_float_to_time
 

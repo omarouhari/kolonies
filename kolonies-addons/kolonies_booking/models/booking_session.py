@@ -67,8 +67,12 @@ class BookingSession(models.Model):
     @api.depends('page_uuid')
     def _compute_page_web_url(self):
         base_url = self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        if not base_url.endswith('/'):
+            base_url += '/web/booking/session/'
+        else:
+            base_url += 'web/booking/session/'
         for record in self:
-            record.page_web_url = base_url + '/' + (record.page_uuid or '')
+            record.page_web_url = base_url + (record.page_uuid or '')
 
     def button_open_participant_open(self):
         action = self.env.ref('contacts.action_contacts').read()[0]

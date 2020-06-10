@@ -18,5 +18,6 @@ class KoloniesWebsite(http.Controller):
             'partners': session.partner_ids,
             'attachments': session.attachment_ids,
             'surveys': session.survey_ids,
+            'iframe_etherpad': session.iframe_etherpad,
         }
         return request.render('kolonies_etherpad.session_web_page', values)

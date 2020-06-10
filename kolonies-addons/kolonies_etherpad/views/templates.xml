@@ -10,7 +10,7 @@
               <div class="row s_nb_column_fixed">
                 <div class="col-lg-12 s_title pt16 pb16" style="text-align: center;">
                   <h1 class="s_title_default">
-                    <font style="font-size: 62px;">Math 06</font>
+                    <font style="font-size: 62px;"><t t-esc="product.name"/></font>
                   </h1>
                 </div>
               </div>
@@ -21,14 +21,13 @@
               <div class="row s_nb_column_fixed">
                 <div class="col-lg-6 pt16 pb16">
                   <div class="row s_col_no_resize s_col_no_bgcolor">
-                    <div class="col-lg-4 ">
-                      <img alt="Équipe de l'entreprise" src="/web/image/website.s_company_team_image_1"
+                    <div class="col-lg-4">
+                      <img t-if="seller.profile_image" alt="Seller" t-att-src="image_data_uri(seller.profile_image)"
                            class="img-fluid rounded-circle d-block mx-auto shadow"/>
                     </div>
                     <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>
-                      <p class="text-muted"> Fondateur et visionnaire, Tony est le pilier de l'Entreprise. Il touche à tout&amp;nbsp;:
-                        développement de logiciels, marketing et stratégies liées à l'expérience client. </p>
+                      <h4 class="o_default_snippet_text"><t t-esc="seller.name"/>, <t t-esc="seller.title.name"/></h4>
+                      <p class="text-muted"><t t-esc="seller.profile_msg"/></p>
                     </div>
                   </div>
                 </div>
@@ -41,67 +40,16 @@
                 <hr class="s_hr_1px s_hr_solid border-600 w-100 mx-auto"/>
               </div>
               <div class="row s_nb_column_fixed">
-                <div class="col-lg-6 pt16 pb16">
+                <div class="col-lg-6 pt16 pb16" t-foreach="partners" t-as="partner">
                   <div class="row s_col_no_resize s_col_no_bgcolor">
                     <div class="col-lg-4 ">
-                      <img alt="Équipe de l'entreprise" src="/web/image/website.s_company_team_image_1"
+                      <img alt="Participant" t-if="partner.image_1024" t-att-src="image_data_uri(partner.image_1024)"
                            class="img-fluid rounded-circle d-block mx-auto shadow"/>
                     </div>
                     <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text">Tony Fred, CEO</h4>
+                      <h4 class="o_default_snippet_text"><t t-esc="partner.name"/>, <t t-esc="partner.title.name"/></h4>
                       <p class="text-muted o_default_snippet_text">
-                        Fondateur et visionnaire, Tony est le pilier de l'Entreprise. Il touche
-                        à tout&amp;nbsp;: développement de logiciels,
-                        marketing et stratégies liées à l'expérience client.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 pt16 pb16">
-                  <div class="row s_col_no_resize s_col_no_bgcolor">
-                    <div class="col-lg-4">
-                      <img alt="Équipe de l'entreprise" src="/web/image/website.s_company_team_image_2"
-                           class="img-fluid rounded-circle d-block mx-auto shadow"/>
-                    </div>
-                    <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text">Mich Stark, COO</h4>
-                      <p class="text-muted o_default_snippet_text">
-                        Mich aime relever les défis. Grâce à son expérience de plusieurs années en tant que directeur
-                        commercial dans le secteur des logiciels, Mich a contribué à la réussite actuelle
-                        de son entreprise. Il figure parmi les plus brillants esprits de sa génération.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 pt16 pb16">
-                  <div class="row s_col_no_resize s_col_no_bgcolor">
-                    <div class="col-lg-4">
-                      <img alt="Équipe de l'entreprise" src="/web/image/website.s_company_team_image_3"
-                           class="img-fluid rounded-circle d-block mx-auto shadow" data-original-title="" title=""
-                           aria-describedby="tooltip31084"/>
-                    </div>
-                    <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text">Aline Turner, CTO</h4>
-                      <p class="text-muted o_default_snippet_text">
-                        Aline fait partie des personnes qui peuvent se vanter d'aimer leur métier.
-                        Elle encadre plus de 100&amp;nbsp;développeurs internes et s'occupe d'une communauté de développeurs qui compte
-                        des milliers de membres.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 pt16 pb16">
-                  <div class="row s_col_no_resize s_col_no_bgcolor">
-                    <div class="col-lg-4">
-                      <img alt="Équipe de l'entreprise" src="/web/image/website.s_company_team_image_4"
-                           class="img-fluid rounded-circle d-block mx-auto shadow"/>
-                    </div>
-                    <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text">Iris Joe, CFO</h4>
-                      <p class="text-muted o_default_snippet_text">
-                        Grâce à son expérience internationale, Iris nous aide à comprendre les chiffres et
-                        à les améliorer. Elle est déterminée à réussir et met ses compétences
-                        professionnelles au service de l'entreprise pour la faire progresser.
+                        <t t-esc="partner.profile_msg"/>
                       </p>
                     </div>
                   </div>
@@ -113,8 +61,8 @@
             <div class="container">
               <div class="row">
                 <div class="col-lg-12 pb24">
-                  <iframe name="embed_readwrite"
-                          src="http://localhost:9001/p/7290a05d4f54f71373e2195d30a7e3f61be20db6?showControls=true&amp;showChat=true&amp;showLineNumbers=true&amp;useMonospaceFont=false"
+                  <iframe name="embed_readwrite" t-if="iframe_etherpad"
+                          t-att-src="str(iframe_etherpad) + '?showControls=true&amp;showChat=true&amp;showLineNumbers=true&amp;useMonospaceFont=false'"
                           width="100%"
                           height="600">
                   </iframe>
@@ -132,13 +80,13 @@
                         <li class="nav-item">
                           <a class="nav-link active" id="nav_tabs_link_1591742008656_27" data-toggle="tab"
                              href="#nav_tabs_content_1591742008656_27" role="tab" aria-controls="nav_tabs_content_1591742008656_27"
-                             aria-selected="true" data-original-title="" title="" aria-describedby="tooltip612419">Ressources
-                            pédagogiques</a>
+                             aria-selected="true" data-original-title="" title="" aria-describedby="tooltip612419">Pedagogics Resources</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="nav_tabs_link_1591742008656_28" data-toggle="tab"
                              href="#nav_tabs_content_1591742008656_28" role="tab" aria-controls="nav_tabs_content_1591742008656_28"
-                             aria-selected="false" data-original-title="" title="" aria-describedby="tooltip489980">Evaluations</a>
+                             aria-selected="false" data-original-title="" title="" aria-describedby="tooltip489980">Tests &amp;
+                            Evaluations</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="nav_tabs_link_1591742008656_29" data-toggle="tab"
@@ -150,27 +98,26 @@
                     <div class="card-body tab-content">
                       <div class="tab-pane fade active show" id="nav_tabs_content_1591742008656_27" role="tabpanel"
                            aria-labelledby="nav_tabs_link_1591742008656_27">
-                        <h3 class="o_default_snippet_text">Détails</h3>
-                        <p class="o_default_snippet_text"><b class="o_default_snippet_text">Les belles histoires ont du caractère.</b>
-                          Considérez que raconter une belle histoire donne du caractère. Écrire une histoire avec du caractère pour vos
-                          clients potentiels va aider a créer une relation. Cela se voit dans les petits détails comme le choix des mots ou
-                          des phrases. Écrivez avec votre point de vue, pas avec l'expérience de quelqu'un d'autre.</p>
+                        <h3 class="o_default_snippet_text">This is the list of pedagogics resources</h3>
+                        <u class="o_default_snippet_text">
+                          <li class="o_default_snippet_text" t-foreach="attachments" t-as="attachment">
+                            <a t-att-href="attachment.get_complete_url()"><t t-esc="attachment.name"/></a>
+                          </li>
+                        </u>
                       </div>
                       <div class="tab-pane fade" id="nav_tabs_content_1591742008656_28" role="tabpanel"
                            aria-labelledby="nav_tabs_link_1591742008656_28">
-                        <h3>Expédition</h3>
-                        <p class="o_default_snippet_text"><b class="o_default_snippet_text">Les meilleures histoires sont pour tout le
-                          monde, même si elles ont été écrites seulement pour une personne.</b> Si vous essayez d'écrire pour une audience
-                          large et générale, votre histoire sonnera faux et fade. Personne ne sera intéressé. Ecrivez-la pour une personne.
-                          Si elle est authentique pour une personne, elle le sera pour les autres.</p>
+                        <h3>This is the list of test and evaluations</h3>
+                        <u class="o_default_snippet_text">
+                          <li class="o_default_snippet_text" t-foreach="surveys" t-as="survey">
+                            <a t-att-href="survey.public_url"><t t-esc="survey.title"/></a>
+                          </li>
+                        </u>
                       </div>
                       <div class="tab-pane fade" id="nav_tabs_content_1591742008656_29" role="tabpanel"
                            aria-labelledby="nav_tabs_link_1591742008656_29">
-                        <h3 class="o_default_snippet_text">Revoir</h3>
+                        <h3 class="o_default_snippet_text">...</h3>
                         <blockquote>
-                          <p class="o_default_snippet_text">Ecrivez une citation d'un de vos clients ici. Les citations sont une superbe
-                            manière de construire la confiance dans vos produits ou services.</p>
-                          <footer class="o_default_snippet_text">— Jane DOE, PDG de <b class="o_default_snippet_text">MaSociété</b></footer>
                         </blockquote>
                       </div>
                     </div>

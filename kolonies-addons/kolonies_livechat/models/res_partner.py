@@ -16,7 +16,8 @@ class ResPartner(models.Model):
 
     def create_website(self):
         values = self._prepare_website()
-        self.partner_website_id = self.env['website'].create(values).id
+        website = self.env.ref('website.default_website', raise_if_not_found=False).copy(default=values)
+        self.partner_website_id = website.id
         return True
 
     def _prepare_website(self):

@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<data>
-		
-		<template id="kolonies_sort" inherit_id="website_sale.sort" customize_show="True" name="Kolonies Show Sort by">
-			<xpath expr="//t[@t-set='name_desc_label']" position="after">
-				<t t-set="sales_count_desc_label">Sales count: High to Low</t>
-				<t t-set="sales_count_asc_label">Sales count: Low to High</t>
-				<t t-set="average_rating_desc_label">Average Rating: High to Low</t>
-				<t t-set="average_rating_asc_label">Average Rating: Low to High</t>
-			</xpath>
-			<xpath expr="//t[@t-set='website_sale_sortable']" position="replace">
-				<t t-set="website_sale_sortable" t-value="[
+  <data>
+
+    <template id="kolonies_assets_frontend_mp" inherit_id="website.assets_frontend" name="Kolonies Assets Frontend Review">
+      <xpath expr="script[last()]" position="after">
+        <link rel="stylesheet" href="/kolonies_marketplace/static/src/css/kolonies.css" media="all" type="text/css"/>
+      </xpath>
+    </template>
+
+    <template id="kolonies_sort" inherit_id="website_sale.sort" customize_show="True" name="Kolonies Show Sort by">
+      <xpath expr="//t[@t-set='name_desc_label']" position="after">
+        <t t-set="sales_count_desc_label">Sales count: High to Low</t>
+        <t t-set="sales_count_asc_label">Sales count: Low to High</t>
+        <t t-set="average_rating_desc_label">Average Rating: High to Low</t>
+        <t t-set="average_rating_asc_label">Average Rating: Low to High</t>
+      </xpath>
+      <xpath expr="//t[@t-set='website_sale_sortable']" position="replace">
+        <t t-set="website_sale_sortable" t-value="[
                 (list_price_desc_label, 'list_price desc'),
                 (list_price_asc_label, 'list_price asc'),
                 (name_asc_label, 'name asc'),
@@ -20,8 +26,57 @@
                 (average_rating_desc_label, 'average_rating desc'),
                 (average_rating_asc_label, 'average_rating asc'),
             ]"/>
-			</xpath>
-		</template>
-	
-	</data>
+      </xpath>
+    </template>
+
+    <template id="seller_profile" inherit_id="odoo_marketplace.mp_seller_profile" name="Kolonies Seller Profile">
+      <xpath expr="//a[@t-attf-href='mailto:{{ seller.email }}']" position="replace"/>
+      <xpath expr="//div[hasclass('item', 'oe_img_bg', 'oe_custom_bg', 'seller-profile-pic')]" position="replace">
+        <div class="item oe_img_bg oe_custom_bg seller-profile-pic img-fluid rounded-circle d-block mx-auto shadow"
+             t-attf-style="background-image: url('/web/image/res.partner/#{seller.id}/profile_image');background-size:180px;"></div>
+      </xpath>
+    </template>
+
+    <template id="seller_list_search" inherit_id="odoo_marketplace.sellers_list" name="Kolonies Seller List Search">
+      <xpath expr="//form[1]" position="after">
+        <form t-att-action="keep('/sellers/list/', search=0, localisation=0, skills=0)" method="get" t-att-class="search_class">
+          <t t-call="kolonies_marketplace.seller_localisation_search_box"/>
+        </form>
+        <form t-att-action="keep('/sellers/list/', search=0, localisation=0, skills=0)" method="get" t-att-class="search_class">
+          <t t-call="kolonies_marketplace.seller_skill_search_box"/>
+        </form>
+      </xpath>
+    </template>
+
+    <template id="seller_localisation_search_box" name="Kolonies Seller Localisation Search">
+      <div role="search" class="input-group">
+        <input type="text" name="localisation" class="search-query form-control oe_search_box"
+               placeholder="Search Localisation…" data-limit="5" t-att-value="localisation"
+               data-display-description="true" data-display-price="true" data-display-image="true"/>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary oe_search_button" aria-label="Search Localisation" title="Search Localisation">
+            <i class="fa fa-search"/>
+          </button>
+        </div>
+        <input name="skills" type="hidden" t-att-value="skills"/>
+        <input name="search" type="hidden" t-att-value="search"/>
+      </div>
+    </template>
+
+    <template id="seller_skill_search_box" name="Kolonies Seller Skill Search">
+      <div role="search" class="input-group">
+        <input type="text" name="skills" class="search-query form-control oe_search_box" placeholder="Search Skills…"
+               data-limit="5" t-att-value="skills"
+               data-display-description="true" data-display-price="true" data-display-image="true"/>
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary oe_search_button" aria-label="Search Skills" title="Search Skills">
+            <i class="fa fa-search"/>
+          </button>
+        </div>
+        <input name="localisation" type="hidden" t-att-value="localisation"/>
+        <input name="search" type="hidden" t-att-value="search"/>
+      </div>
+    </template>
+
+  </data>
 </odoo>

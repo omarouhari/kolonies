@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="website.default_website" model="website">
+      <field name="seller_ppr">2</field>
+      <field name="seller_ppg">20</field>
+    </record>
+
+  </data>
+</odoo>

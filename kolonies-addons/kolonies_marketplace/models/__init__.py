@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from . import website
 from . import res_users
 from . import res_partner
 from . import hr_resume_line

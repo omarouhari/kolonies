@@ -64,7 +64,8 @@
                   <iframe name="embed_readwrite" t-if="iframe_etherpad"
                           t-att-src="str(iframe_etherpad) + '?showControls=true&amp;showChat=true&amp;showLineNumbers=true&amp;useMonospaceFont=false'"
                           width="100%"
-                          height="600">
+                          height="600"
+                          allow="camera; microphone">
                   </iframe>
                 </div>
               </div>

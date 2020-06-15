@@ -15,14 +15,15 @@
     ],
     'data': [
         # data
-    # security
-    'security/ir.model.access.csv',
-    # views
-    'views/templates.xml',
-    'views/res_partner_view.xml',
-    'views/seller_location_view.xml',
-  ],
-  'application': False,
-  'installable': True,
-  'auto_install': False,
+        'data/website_data.xml',
+        # security
+        'security/ir.model.access.csv',
+        # views
+        'views/templates.xml',
+        'views/res_partner_view.xml',
+        'views/seller_location_view.xml',
+    ],
+    'application': False,
+    'installable': True,
+    'auto_install': False,
 }

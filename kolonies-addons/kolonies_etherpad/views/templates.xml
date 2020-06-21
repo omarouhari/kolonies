@@ -102,7 +102,7 @@
                         <h3 class="o_default_snippet_text">This is the list of pedagogics resources</h3>
                         <u class="o_default_snippet_text">
                           <li class="o_default_snippet_text" t-foreach="attachments" t-as="attachment">
-                            <a t-att-href="attachment.get_complete_url()"><t t-esc="attachment.name"/></a>
+                            <a t-att-href="attachment.get_complete_url()" target="_blank"><t t-esc="attachment.name"/></a>
                           </li>
                         </u>
                       </div>
@@ -111,7 +111,7 @@
                         <h3>This is the list of test and evaluations</h3>
                         <u class="o_default_snippet_text">
                           <li class="o_default_snippet_text" t-foreach="surveys" t-as="survey">
-                            <a t-att-href="survey.public_url"><t t-esc="survey.title"/></a>
+                            <a t-att-href="survey.public_url" target="_blank"><t t-esc="survey.title"/></a>
                           </li>
                         </u>
                       </div>

@@ -15,11 +15,11 @@
     ],
     'data': [
         # security
-    'security/ir.model.access.csv',
-    # views
-    'views/templates.xml',
-  ],
-  'application': False,
-  'installable': True,
-  'auto_install': False,
+        'security/ir.model.access.csv',
+        # views
+        'views/templates.xml',
+    ],
+    'application': False,
+    'installable': True,
+    'auto_install': False,
 }

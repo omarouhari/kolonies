@@ -78,5 +78,107 @@
       </div>
     </template>
 
+    <template id="seller_list_item_inherit" inherit_id="odoo_marketplace.seller_list_item" name="Kolonies Seller List Item">
+      <xpath expr="//div[@itemscope='itemscope']" position="replace">
+        <div itemscope="itemscope" class="teacher">
+          <div class="teacher-card">
+            <div class="row img-container">
+              <div class="col-xs-6 col-sm-6 col-md-6">
+                <a itemprop="url"
+                   t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}">
+                  <span
+                      itemprop="image"
+                      t-field="seller_obj.sudo().profile_image"
+                      t-options="{'widget': 'image', 'style':'height: 100px;width: 100px;border-radius: 4px;', 'zoom': 'image', 'class':'img-fluid rounded-circle d-block shadow'}"
+                      t-att-alt="seller_obj.sudo().name"/>
+                </a>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 rating-container">
+                <t t-call="kolonies_marketplace.seller_review"/>
+              </div>
+            </div>
+
+            <div class="row card-block">
+              <div class="col-xs-11 col-sm-11 col-md-11" id="seller_name">
+                <h5 class="name">
+                  <a itemprop="name"
+                     t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}"
+                     t-field="seller_obj.sudo().name"/>
+                  <t t-if="seller_obj.sudo().is_online()">
+                    <i class="fa fa-circle" style="color: green;"/>
+                  </t>
+                  <t t-else="">
+                    <i class="fa fa-circle" style="color: red;"/>
+                  </t>
+                </h5>
+                <p class="description">
+                  <t t-esc="seller_obj.sudo().profile_msg"/>
+                </p>
+                <div class="subjects-container">
+                  <span class="skill" t-foreach="seller_obj.sudo().skill_ids" t-as="skill">
+                    <p class="label-success"><t t-esc="skill.skill_id.name"/></p>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div id="seller_review" class="row card-block">
+              <div class="col-xs-4 col-sm-4 col-md-4 text-left btn-container price-label-container">
+                <span class="price-label">500€
+                  <p>Per Session</p>
+                </span>
+              </div>
+              <div id="seller_other_info" class="col-xs-8 col-sm-8 col-md-8 text-right btn-container pull-right view-profile">
+                <a class="btn-view-profile view-profile pull-right" itemprop="name"
+                   t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}">
+                  <u>View Profile</u>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </xpath>
+    </template>
+
+    <template id="sellers_list_inherit" inherit_id="odoo_marketplace.sellers_list" name="Kolonies Sellers List">
+      <xpath expr="//td[contains(@t-attf-class, 'mp_seller')]" position="replace">
+        <td
+            t-att-seller_id="seller_obj.id"
+            t-att-colspan="td_seller['x'] != 1 and td_seller['x']"
+            t-att-rowspan="td_seller['y'] != 1 and td_seller['y']"
+            t-attf-class="mp_seller oe_product #{td_seller['class']}"
+            style="vertical-align: top;">
+          <div t-attf-class="o_wsale_product_grid_wrapper o_wsale_product_grid_wrapper_#{td_seller['x']}_#{td_seller['y']}">
+            <t t-call="odoo_marketplace.seller_list_item">
+              <t t-set="product_image_big" t-value="td_seller['x'] + td_seller['y'] &gt; 2"/>
+            </t>
+          </div>
+        </td>
+      </xpath>
+    </template>
+
+    <template id="seller_review" active="True" customize_show="True" name="Seller Reviews">
+      <div id="seller_review">
+        <div class="rating-container" style="padding-right: 0px;">
+          <t t-set="val" t-value="seller_obj.avg_review()"/>
+          <t t-set="seller_reviews" t-value="len(seller_obj.fetch_active_review(seller_obj.sudo().id))"/>
+          <input
+              id="input-5a"
+              class="rating form-control d-none col-md-2"
+              t-attf-value="#{seller_obj.avg_review()}"
+              data-show-clear="false"
+              data-show-caption="false"
+              data-min="0"
+              data-max="5"
+              data-step="0.1"
+              data-readonly="true"
+              data-size="xxs"
+              data-symbol="&#xf005;"
+              data-glyphicon="false"
+              data-rating-class="rating-fa"/>
+          <span style="color: #777777;">(<t t-esc="seller_reviews"/>)</span>
+        </div>
+      </div>
+    </template>
+
   </data>
 </odoo>

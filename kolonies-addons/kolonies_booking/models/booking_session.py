@@ -37,7 +37,7 @@ class BookingSession(models.Model):
     def button_start(self):
         self.ensure_one()
         self.state = 'in_progress'
-        return True
+        return self.button_join_meeting()
 
     def button_finished(self):
         self.ensure_one()
@@ -90,3 +90,11 @@ class BookingSession(models.Model):
             return False
         self.partner_ids = [(4, partner.id)]
         return True
+
+    def button_join_meeting(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_url',
+            'target': 'new',
+            'url': self.page_web_url,
+        }

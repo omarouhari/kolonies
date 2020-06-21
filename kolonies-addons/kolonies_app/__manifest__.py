@@ -11,9 +11,11 @@
     'description': '',
     'depends': [
         'kolonies_website',
+        'kolonies_livechat',
+        'kolonies_etherpad',
     ],
     'data': [],
     'application': True,
     'installable': True,
-  'auto_install': False,
+    'auto_install': False,
 }

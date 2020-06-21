@@ -74,21 +74,27 @@
       <field name="arch" type="xml">
         <form string="Booking Session">
           <header>
-            <button name="button_plan" string="Plan" type="object" states="draft" class="btn-primary"/>
-            <button name="button_confirm" string="Confirm" type="object" states="planed" class="btn-primary"/>
-            <button name="button_start" string="Start" type="object" states="open" class="btn-primary"/>
+            <button name="button_plan" string="Plan" type="object" states="draft" class="btn-primary"
+                    groups="kolonies_booking.booking_session_manager"/>
+            <button name="button_confirm" string="Confirm" type="object" states="planed" class="btn-primary"
+                    groups="kolonies_booking.booking_session_manager"/>
+            <button name="button_start" string="Start" type="object" states="open" class="btn-primary"
+                    groups="kolonies_booking.booking_session_manager"/>
             <button name="button_join_meeting" string="Join Session" type="object" class="btn-primary" states="in_progress"/>
-            <button name="button_finished" string="Finish" type="object" states="in_progress" class="btn-primary"/>
+            <button name="button_finished" string="Finish" type="object" states="in_progress" class="btn-primary"
+                    groups="kolonies_booking.booking_session_manager"/>
             <button name="button_cancel"
                     string="Cancel"
                     type="object"
                     states="draft,planned"
-                    class="btn-secondary"/>
+                    class="btn-secondary"
+                    groups="kolonies_booking.booking_session_manager"/>
             <button name="button_reset"
                     string="Reset To Draft"
                     type="object"
                     states="plan,cancelled"
-                    class="btn-secondary"/>
+                    class="btn-secondary"
+                    groups="kolonies_booking.booking_session_manager"/>
             <field name="state" widget="statusbar"/>
           </header>
           <sheet>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="booking_session_category" model="ir.module.category">
+      <field name="name">Booking Session Access</field>
+    </record>
+
+    <record id="booking_session_user" model="res.groups">
+      <field name="name">User</field>
+      <field name="category_id" ref="booking_session_category"/>
+    </record>
+
+    <record id="booking_session_manager" model="res.groups">
+      <field name="name">Manager</field>
+      <field name="category_id" ref="booking_session_category"/>
+      <field name="implied_ids" eval="[(4, ref('booking_session_user'))]"/>
+    </record>
+
+  </data>
+</odoo>

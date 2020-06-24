@@ -17,3 +17,11 @@ class ResPartner(models.Model):
     sol_ids = fields.One2many('sale.order.line', 'marketplace_seller_id', 'Sale Order Lines', readonly=True)
     localisation_ids = fields.Many2many('seller.localisation', 'seller_localisation_partner_rel', 'partner_id', 'localisation_id',
                                         'Localisations Served')
+    product_ids = fields.One2many('product.template', 'marketplace_seller_id', 'Products', readonly=True)
+    session_price = fields.Monetary(compute='_compute_session_price', store=True)
+
+    @api.depends('product_ids', 'product_ids.booking_day_slot_ids', 'product_ids.booking_day_slot_ids.booking_slots_ids')
+    def _compute_session_price(self):
+        for record in self:
+            configs = record.product_ids.mapped('booking_day_slot_ids.booking_slots_ids')
+            record.session_price = min(configs.mapped('price') or [0])

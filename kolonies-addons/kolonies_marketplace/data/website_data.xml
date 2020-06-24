@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
+  <data noupdate="0">
 
     <record id="website.default_website" model="website">
       <field name="seller_ppr">3</field>
       <field name="seller_ppg">20</field>
+    </record>
+
+    <record id="menu_sellers_list" model="website.menu">
+      <field name="name">Sellers List</field>
+      <field name="url">/sellers/list</field>
+      <field name="parent_id" ref="website.main_menu"/>
+      <field name="sequence">60</field>
     </record>
 
   </data>

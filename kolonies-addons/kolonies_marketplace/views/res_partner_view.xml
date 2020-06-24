@@ -9,6 +9,8 @@
 			<field name="arch" type="xml">
 				<field name="title" position="after">
 					<field name="partner_type"/>
+					<field name="product_ids" invisible="1"/>
+					<field name="session_price" invisible="1"/>
 				</field>
 				<xpath expr="//group[6]" position="after">
 					<div class="row">

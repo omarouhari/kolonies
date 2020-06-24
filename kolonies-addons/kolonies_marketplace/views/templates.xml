@@ -93,8 +93,8 @@
                       t-att-alt="seller_obj.sudo().name"/>
                 </a>
               </div>
-              <div class="col-xs-6 col-sm-6 col-md-6 rating-container">
-                <t t-call="kolonies_marketplace.seller_review"/>
+              <div>
+                <t t-call="kolonies_marketplace.seller_review_stars"/>
               </div>
             </div>
 
@@ -123,8 +123,9 @@
             </div>
             <div id="seller_review" class="row card-block">
               <div class="col-xs-4 col-sm-4 col-md-4 text-left btn-container price-label-container">
-                <span class="price-label">500€
-                  <p>Per Session</p>
+                <span class="price-label">
+                  From<br/>
+                  <t t-esc="seller_obj.session_price" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
                 </span>
               </div>
               <div id="seller_other_info" class="col-xs-8 col-sm-8 col-md-8 text-right btn-container pull-right view-profile">
@@ -156,27 +157,24 @@
       </xpath>
     </template>
 
-    <template id="seller_review" active="True" customize_show="True" name="Seller Reviews">
-      <div id="seller_review">
-        <div class="rating-container" style="padding-right: 0px;">
-          <t t-set="val" t-value="seller_obj.avg_review()"/>
-          <t t-set="seller_reviews" t-value="len(seller_obj.fetch_active_review(seller_obj.sudo().id))"/>
-          <input
-              id="input-5a"
-              class="rating form-control d-none col-md-2"
-              t-attf-value="#{seller_obj.avg_review()}"
-              data-show-clear="false"
-              data-show-caption="false"
-              data-min="0"
-              data-max="5"
-              data-step="0.1"
-              data-readonly="true"
-              data-size="xxs"
-              data-symbol="&#xf005;"
-              data-glyphicon="false"
-              data-rating-class="rating-fa"/>
-          <span style="color: #777777;">(<t t-esc="seller_reviews"/>)</span>
-        </div>
+    <template id="seller_review_stars" active="True" customize_show="True" name="Seller Reviews">
+      <div style="display:inline-flex;">
+        <t t-set="val" t-value="seller_obj.avg_review()"/>
+        <t t-set="seller_reviews" t-value="len(seller_obj.fetch_active_review(seller_obj.sudo().id))"/>
+        <input
+            id="input-5a"
+            class="rating form-control d-none col-md-2"
+            t-attf-value="#{seller_obj.avg_review()}"
+            data-show-clear="false"
+            data-show-caption="false"
+            data-min="0"
+            data-max="5"
+            data-step="0.1"
+            data-readonly="true"
+            data-size="xxs"
+            data-glyphicon="false"
+            data-rating-class="rating-fa"/>
+        <span style="color: #777777;">(<t t-esc="seller_reviews"/>)</span>
       </div>
     </template>
 

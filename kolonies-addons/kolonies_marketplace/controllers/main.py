@@ -48,12 +48,21 @@ class MarketplaceSellerProfile(MarketplaceSellerProfile):
 			'seller_objs': seller_objs,
 			'search_count': seller_count,
 			'bins': TableCompute().process(seller_objs, ppg, PPR),
-			'ppg': ppg,
-			'ppr': PPR,
-			'rows': SPR,
-			'keep': keep,
-			'total_active_seller': total_active_seller,
-			'localisation': localisation,
-			'skills': skills,
-		}
-		return request.render('odoo_marketplace.sellers_list', values)
+            'ppg': ppg,
+            'ppr': PPR,
+            'rows': SPR,
+            'keep': keep,
+            'total_active_seller': total_active_seller,
+            'localisation': localisation,
+            'skills': skills,
+        }
+        return request.render('odoo_marketplace.sellers_list', values)
+
+
+class BuyerController(http.Controller):
+
+    @http.route('/my/dashboard', type='http', auth="user", website=True)
+    def my_dashboard(self):
+        buyer_menu = request.env.ref('kolonies_marketplace.wk_buyer_dashboard', raise_if_not_found=False)
+        url = "/web#menu_id=" + str(buyer_menu.id)
+        return request.redirect(url)

@@ -2,15 +2,5 @@
 <odoo>
   <data>
 
-    <record id="odoo_marketplace.wk_seller_dashboard_menu1_sub_menu1" model="ir.ui.menu">
-      <field name="groups_id" eval="[(4, ref('marketplace_buyer_group'))]"/>
-    </record>
-    <record id="odoo_marketplace.wk_seller_dashboard" model="ir.ui.menu">
-      <field name="groups_id" eval="[(4, ref('marketplace_buyer_group'))]"/>
-    </record>
-    <record id="odoo_marketplace.wk_seller_dashboard" model="ir.ui.menu">
-      <field name="groups_id" eval="[(4, ref('marketplace_buyer_group'))]"/>
-    </record>
-
   </data>
 </odoo>

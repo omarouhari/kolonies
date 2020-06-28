@@ -111,8 +111,8 @@
                     <i class="fa fa-circle" style="color: red;"/>
                   </t>
                 </h5>
-                <p class="description">
-                  <t t-esc="seller_obj.sudo().profile_msg"/>
+                <p class="description" style="font-size: larger">
+                  <t t-esc="env['ir.fields.converter'].text_from_html(seller_obj.sudo().profile_msg)"/>
                 </p>
                 <div class="subjects-container">
                   <span class="skill" t-foreach="seller_obj.sudo().skill_ids" t-as="skill">

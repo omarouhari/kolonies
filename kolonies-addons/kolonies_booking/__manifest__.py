@@ -11,8 +11,8 @@
     'description': '',
     'depends': [
         'marketplace_booking_system',
-        'kolonies_base',
         'calendar',
+        'kolonies_marketplace',
     ],
     'data': [
         # data

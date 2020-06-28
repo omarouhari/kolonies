@@ -13,6 +13,8 @@
         'odoo_marketplace',
         'hr_skills',
         'contacts',
+        'survey',
+        'sale',
     ],
     'data': [
         # security

@@ -204,5 +204,11 @@
               parent="odoo_marketplace.wk_seller_dashboard"
               action="booking_session_act_window"/>
 
+    <menuitem name="Booking Sessions"
+              id="booking_session_menu_buyer"
+              sequence="0"
+              parent="kolonies_marketplace.wk_buyer_dashboard"
+              action="booking_session_act_window"/>
+
   </data>
 </odoo>

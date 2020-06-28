@@ -9,8 +9,8 @@ class ProductTemplate(models.Model):
 
 	sol_ids = fields.One2many(related='marketplace_seller_id.sol_ids')
 	seller_review_ids = fields.One2many(related='marketplace_seller_id.seller_review_ids')
-	sales_count_stored = fields.Float('Sales Count', compute='_compute_stored_sales_count', store=True, readonly=True)
-	average_rating = fields.Float('Average Rating', compute='_compute_average_rating', store=True, readonly=True)
+	sales_count_stored = fields.Float('Sales Count', compute='_compute_stored_sales_count', store=True, readonly=True, compute_sudo=True)
+	average_rating = fields.Float('Average Rating', compute='_compute_average_rating', store=True, readonly=True, compute_sudo=True)
 
 	@api.depends('sol_ids')
 	def _compute_stored_sales_count(self):

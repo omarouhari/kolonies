@@ -128,10 +128,17 @@
             </group>
             <notebook>
               <page name="attachment_pg" string="Documents">
-                <field name="attachment_ids" nolabel="1"/>
+                <field name="attachment_ids" nolabel="1" widget="one2many">
+                  <tree>
+                    <field name="name" invisible="1"/>
+                    <field name="datas" widget="FieldBinary" filename="name"/>
+                    <field name="type"/>
+                    <field name="create_date"/>
+                  </tree>
+                </field>
               </page>
               <page name="surveys_pg" string="Surveys">
-                <field name="survey_ids" nolabel="1"/>
+                <field name="survey_ids" nolabel="1" widget="one2many"/>
               </page>
             </notebook>
           </sheet>

@@ -2,7 +2,7 @@
 <odoo>
   <data>
 
-  <record id="marketplace_buyer_group" model="res.groups">
+    <record id="marketplace_buyer_group" model="res.groups">
       <field name="name">Pending Buyer</field>
     </record>
 

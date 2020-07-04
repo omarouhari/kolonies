@@ -34,29 +34,6 @@
               </div>
             </div>
           </section>
-          <section class="s_company_team" data-name="Company Team">
-            <div class="container">
-              <div class="s_hr text-left pt32 pb32" data-name="Separator">
-                <hr class="s_hr_1px s_hr_solid border-600 w-100 mx-auto"/>
-              </div>
-              <div class="row s_nb_column_fixed">
-                <div class="col-lg-6 pt16 pb16" t-foreach="partners" t-as="partner">
-                  <div class="row s_col_no_resize s_col_no_bgcolor">
-                    <div class="col-lg-4 ">
-                      <img alt="Participant" t-if="partner.image_1024" t-att-src="image_data_uri(partner.image_1024)"
-                           class="img-fluid rounded-circle d-block mx-auto shadow"/>
-                    </div>
-                    <div class="col-lg-8">
-                      <h4 class="o_default_snippet_text"><t t-esc="partner.name"/>, <t t-esc="partner.title.name"/></h4>
-                      <p class="text-muted o_default_snippet_text">
-                        <t t-esc="partner.profile_msg"/>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <section class="s_call_to_action bg-200 pt48 pb24" data-name="Call to Action">
             <div class="container">
               <div class="row">

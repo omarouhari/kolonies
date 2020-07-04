@@ -8,10 +8,12 @@ access_res_groups_buyer,access_res_groups buyer,base.model_res_groups,marketplac
 
 access_mail_channel_buyer,access_mail_channel_buyer,mail.model_mail_channel,marketplace_buyer_group,1,1,1,1
 access_mail_alias_buyer,access_mail_alias buyer,mail.model_mail_alias,marketplace_buyer_group,1,1,1,1
-
 access_res_users_buyer,access_res_users buyer,base.model_res_users,marketplace_buyer_group,1,0,0,0
 
 access_survey_survey_buyer,access_survey_survey buyer,survey.model_survey_survey,marketplace_buyer_group,1,0,0,0
 access_sale_order_buyer,access_sale_order buyer,sale.model_sale_order,marketplace_buyer_group,1,0,0,0
-
 access_survey_user_input_buyer,access_survey_user_input buyer,survey.model_survey_user_input,marketplace_buyer_group,1,0,0,0
+
+access_survey_survey_seller,access_survey_survey seller,survey.model_survey_survey,odoo_marketplace.marketplace_seller_group,1,1,1,1
+access_survey_question_seller,access_survey_question seller,survey.model_survey_question,odoo_marketplace.marketplace_seller_group,1,1,1,1
+access_survey_user_input_seller,access_survey_user_input seller,survey.model_survey_user_input,odoo_marketplace.marketplace_seller_group,1,1,1,1

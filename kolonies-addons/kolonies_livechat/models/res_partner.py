@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import api, fields, models, _
+from odoo import api, fields, models, _, SUPERUSER_ID
 
 
 class ResPartner(models.Model):
@@ -35,7 +35,7 @@ class ResPartner(models.Model):
     def _prepare_channel(self):
         return {
             'name': _('Channel of %s') % self.name,
-            'user_ids': [(4, self.user_ids[0].id)],
+            'user_ids': [(6, 0, [self.user_ids.id, SUPERUSER_ID])],
             'button_text': _('Have a question? Chat with us.'),
             'default_message': _('Hello!\nHow can I help you?'),
             'input_placeholder': _('Type your message here ...'),

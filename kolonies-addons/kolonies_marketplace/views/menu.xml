@@ -4,7 +4,7 @@
 
     <menuitem id="wk_buyer_dashboard"
               name="Buyer Dashboard"
-              groups=""
+              groups="kolonies_base.marketplace_buyer_group"
               web_icon="kolonies_marketplace,static/description/icon.png"
               sequence="10"/>
 

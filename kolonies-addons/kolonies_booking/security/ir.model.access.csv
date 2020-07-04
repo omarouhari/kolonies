@@ -1,6 +1,10 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_booking_session_reader,access_booking_session reader,model_booking_session,,1,0,0,0
-access_booking_session_user,access_booking_session user,model_booking_session,base.group_user,1,1,1,0
-access_booking_session_manager,access_booking_session manager,model_booking_session,base.group_erp_manager,1,1,1,1
+access_booking_session_buyer,access_booking_session buyer,model_booking_session,kolonies_base.marketplace_buyer_group,1,0,1,0
+access_booking_session_seller,access_booking_session seller,model_booking_session,odoo_marketplace.marketplace_seller_group,1,1,1,1
+access_booking_config_user,access_booking_config user,website_booking_system.model_booking_config,,1,0,0,0
+access_calendar_event_user,access_calendar_event user,calendar.model_calendar_event,odoo_marketplace.marketplace_seller_group,1,1,1,1
+access_calendar_attendee_user,access_calendar_attendee user,calendar.model_calendar_attendee,odoo_marketplace.marketplace_seller_group,1,1,1,1
 
-access_booking_config_user,access_booking_config user,website_booking_system.model_booking_config,base.group_user,1,0,0,0
+access_mail_mail_user,access_mail_mail user,mail.model_mail_mail,odoo_marketplace.marketplace_seller_group,1,1,1,1
+

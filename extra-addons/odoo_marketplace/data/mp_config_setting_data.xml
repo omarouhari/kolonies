@@ -19,10 +19,10 @@
             <field name="mp_recently_product">5</field>
             <field name="mp_review_load_no">5</field>
             <field name="mp_review_auto_publish">False</field>
-            <field name="mp_show_seller_list">True</field>
+            <field name="mp_show_seller_list">False</field>
             <field name="auth_signup_uninvited">b2c</field>
             <field name="mp_show_sell_menu_header">True</field>
-            <field name="mp_show_sell_menu_footer">True</field>
+            <field name="mp_show_sell_menu_footer">False</field>
         </record>
 
         <!-- Marketplace Config settings -->
@@ -72,7 +72,7 @@
 
         <function model="ir.default" name="set" eval="('res.config.settings', 'show_visit_shop', True)"/>
         <function model="ir.default" name="set" eval="('res.config.settings', 'show_sell_menu_header', True)"/>
-        <function model="ir.default" name="set" eval="('res.config.settings', 'show_sell_menu_footer', True)"/>
+        <function model="ir.default" name="set" eval="('res.config.settings', 'show_sell_menu_footer', False)"/>
 
         <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_admin_4_new_seller', True)"/>
         <function model="ir.default" name="set" eval="('res.config.settings', 'enable_notify_seller_4_new_seller', True)"/>

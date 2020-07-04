@@ -15,6 +15,7 @@
         'contacts',
         'survey',
         'sale',
+        'calendar',
     ],
     'data': [
         # security

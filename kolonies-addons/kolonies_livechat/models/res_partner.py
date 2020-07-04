@@ -35,7 +35,7 @@ class ResPartner(models.Model):
     def _prepare_channel(self):
         return {
             'name': _('Channel of %s') % self.name,
-            'user_ids': [(6, 0, [self.user_ids.id, SUPERUSER_ID])],
+            'user_ids': [(6, 0, [self.user_ids.id, self.env.ref('base.user_admin').id])],
             'button_text': _('Have a question? Chat with us.'),
             'default_message': _('Hello!\nHow can I help you?'),
             'input_placeholder': _('Type your message here ...'),

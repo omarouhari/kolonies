@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_website_track_user,access_website_track user,website.model_website_track,,1,0,0,0
+access_website_visitor_social_user,access_website_visitor_social user,website.model_website_visitor,odoo_marketplace.marketplace_seller_group,1,0,0,0

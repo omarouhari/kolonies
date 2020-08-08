@@ -32,7 +32,8 @@ class SaleOrderLine(models.Model):
     def button_approve_ol(self):
         res = super(SaleOrderLine, self).button_approve_ol()
         if not self.booking_session_id:
-            session = self.marketplace_seller_id.check_booking_session_exist(self.booking_slot_id, self.product_id, self.booking_date)
+            session = self.marketplace_seller_id.check_booking_session_exist(self.booking_slot_id, self.product_id, self.start_date,
+                                                                             self.end_date)
             if session:
                 session.add_participant(self.order_partner_id)
             else:

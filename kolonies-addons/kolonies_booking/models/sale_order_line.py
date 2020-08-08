@@ -14,19 +14,15 @@ class SaleOrderLine(models.Model):
     end_date = fields.Datetime('End Date', compute='_compute_dates', store=True, compute_sudo=True)
 
     def _prepare_booking_session_data(self):
-        date_start = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.start_time))
-        date_end = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.end_time))
         return {
             'booking_slot_id': self.booking_slot_id.id,
             'product_id': self.product_id.id,
             'state': 'planed',
-            'start': date_start,
-            'stop': date_end,
+            'start': self.start_date,
+            'stop': self.end_date,
             'partner_ids': [(6, 0, [self.marketplace_seller_id.id, self.order_partner_id.id])],
             'description': _('Appointment') + '-' + self.product_id.name,
             'user_id': self.marketplace_seller_id.get_associated_user().id,
-            'start_date': date_start,
-            'end_date': date_end,
         }
 
     def button_approve_ol(self):
@@ -61,5 +57,6 @@ class SaleOrderLine(models.Model):
     def _compute_dates(self):
         for sol in self:
             sol.duration_booked = sol.booked_slot_id.end_time - sol.booked_slot_id.start_time
-            sol.start_date = '%f - %f' % (sol.booking_date, sol.booked_slot_id.start_time)
-            sol.end_date = '%f - %f' % (sol.booking_date, sol.booked_slot_id.end_time)
+            if self.booking_date:
+                sol.start_date = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.start_time))
+                sol.end_date = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.end_time))

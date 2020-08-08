@@ -57,6 +57,6 @@ class SaleOrderLine(models.Model):
     def _compute_dates(self):
         for sol in self:
             sol.duration_booked = sol.booked_slot_id.end_time - sol.booked_slot_id.start_time
-            if self.booking_date:
+            if sol.booking_date:
                 sol.start_date = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.start_time))
                 sol.end_date = datetime.combine(self.booking_date, convert_float_to_time(self.booked_slot_id.end_time))

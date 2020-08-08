@@ -16,9 +16,9 @@ class BookingSession(models.Model):
     def button_confirm(self):
         res = super(BookingSession, self).button_confirm()
         endpoint = self.env['ir.config_parameter'].sudo().get_param('etherpad_endpoint')
-        sequence = self.env['ir.sequence'].next_by_code('etherpad.session.seq')
         if not endpoint:
             ValidationError(_('The etherpad endpoint is not defined in system parameters. Please contact your system administrator.'))
+        sequence = self.env['ir.sequence'].next_by_code('etherpad.session.seq')
         if not sequence:
             ValidationError(_('The etherpad sequence not found.'))
         if not endpoint.endswith('/'):

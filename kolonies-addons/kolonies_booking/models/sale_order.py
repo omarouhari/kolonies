@@ -13,7 +13,8 @@ class SaleOrder(models.Model):
 
     def create_booking_session(self):
         for line in self.mapped('order_line'):
-            session = line.marketplace_seller_id.check_booking_session_exist(line.booking_slot_id, line.product_id)
+            session = line.marketplace_seller_id.check_booking_session_exist(line.booking_slot_id, line.product_id, line.start_date,
+                                                                             line.end_date)
             if session:
                 session.add_participant(line.order_partner_id)
                 continue

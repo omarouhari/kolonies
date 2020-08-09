@@ -23,6 +23,7 @@ class BookingSession(models.Model):
     end_time = fields.Float(related='booking_slot_id.time_slot_id.end_time', realonly=True, store=True)
     event_id = fields.Many2one('calendar.event', 'Calendar Event', required=True, ondelete="restrict")
     participant_count = fields.Integer('Participant Count', compute='_compute_participant_count', store=True, required=False)
+    booking_date = fields.Date('Booking Date')
 
     def button_plan(self):
         self.ensure_one()

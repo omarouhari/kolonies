@@ -9,11 +9,10 @@ class ResPartner(models.Model):
     booking_session_ids = fields.One2many('booking.session', 'partner_id', string='Booking Sessions')
     booking_session_count = fields.Integer('Booking Session Count', compute='_compute_booking_session_count')
 
-    def check_booking_session_exist(self, booking_slot=False, product=False, start_date=False, end_date=False):
+    def check_booking_session_exist(self, booking_slot=False, product=False, booking_date=False):
         return self.booking_session_ids.filtered(lambda bs: bs.booking_slot_id == booking_slot
                                                             and bs.product_id == product
-                                                            and bs.start_date == start_date
-                                                            and bs.end_date == end_date)
+                                                            and bs.booking_date == booking_date)
 
     def _compute_booking_session_count(self):
         for record in self:

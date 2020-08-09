@@ -13,5 +13,9 @@
       <field name="implied_ids" eval="[(4, ref('survey.group_survey_manager'))]"/>
     </record>
 
+    <record id="base.group_portal" model="res.groups">
+      <field name="implied_ids" eval="[(4, ref('kolonies_base.marketplace_buyer_group'))]"/>
+    </record>
+
   </data>
 </odoo>

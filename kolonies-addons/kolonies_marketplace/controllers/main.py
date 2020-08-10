@@ -58,11 +58,3 @@ class MarketplaceSellerProfile(MarketplaceSellerProfile):
         }
         return request.render('odoo_marketplace.sellers_list', values)
 
-
-class BuyerController(http.Controller):
-
-    @http.route('/my/dashboard', type='http', auth="user", website=True)
-    def my_dashboard(self):
-        buyer_menu = request.env.ref('kolonies_marketplace.wk_buyer_dashboard', raise_if_not_found=False)
-        url = "/web#menu_id=" + str(buyer_menu.id)
-        return request.redirect(url)

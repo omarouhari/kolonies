@@ -15,3 +15,9 @@ class ResUsers(models.Model):
     def create_associated_employee(self):
         self.ensure_one()
         return self.env['hr.employee'].create({'name': self.name, 'user_id': self.id})
+
+    def check_user_is_draft_seller(self):
+        result = super(ResUsers, self).check_user_is_draft_seller()
+        if not self.partner_id.seller and self.has_group('kolonies_base.marketplace_buyer_group'):
+            return True
+        return result

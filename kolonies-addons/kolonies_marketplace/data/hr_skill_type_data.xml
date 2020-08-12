@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+
+    <record id="hr_skill_type_speciality" model="hr.skill.type">
+      <field name="name">Spécialité</field>
+      <field name="sequence">10</field>
+      <field name="ranking">label-success</field>
+    </record>
+
+    <record id="hr_skill_type_lang" model="hr.skill.type">
+      <field name="name">Langue d'enseignement</field>
+      <field name="sequence">20</field>
+      <field name="ranking">label-heavy</field>
+    </record>
+
+    <record id="hr_skill_type_technology" model="hr.skill.type">
+      <field name="name">Technologies</field>
+      <field name="sequence">30</field>
+      <field name="ranking">label-moderate</field>
+    </record>
+
+    <record id="hr_skill_type_soft_skill" model="hr.skill.type">
+      <field name="name">Soft Skills</field>
+      <field name="sequence">40</field>
+      <field name="ranking">label-normal</field>
+    </record>
+
+  </data>
+</odoo>

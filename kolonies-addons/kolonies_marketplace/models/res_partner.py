@@ -25,3 +25,11 @@ class ResPartner(models.Model):
         for record in self:
             configs = record.product_ids.mapped('booking_day_slot_ids.booking_slots_ids')
             record.session_price = min(configs.mapped('price') or [0])
+
+    def group_by_skill_type(self):
+        group_by = {}
+        for skill in self.skill_ids:
+            group_by.setdefault(skill.skill_type_id, []).append(skill.display_name)
+        print (group_by)
+        return group_by
+

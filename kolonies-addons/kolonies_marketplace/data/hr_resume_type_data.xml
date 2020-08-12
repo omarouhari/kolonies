@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="hr_resume_type_degree" model="hr.resume.line.type">
+      <field name="name">Dilpôme</field>
+    </record>
+
+  </data>
+</odoo>

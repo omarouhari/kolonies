@@ -25,7 +25,8 @@ class ResPartner(models.Model):
             'name': _('Website of %s') % self.name,
             'company_id': self.company_id or self.env.ref('base.main_company', raise_if_not_found=False).id,
             'default_lang_id': self.get_lang().id,
-            'channel_id': self.create_channel().id
+            'channel_id': self.create_channel().id,
+            'is_seller': True
         }
 
     def create_channel(self):

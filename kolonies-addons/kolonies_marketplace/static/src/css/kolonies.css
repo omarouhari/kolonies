@@ -291,7 +291,7 @@ img.img-circle{
     display: inline-flex;
 }
 
-p.label-success{
+p.label-skill{
     -webkit-font-smoothing: antialiased;
     font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
@@ -306,8 +306,23 @@ p.label-success{
     vertical-align: baseline;
     padding: 0.3em 0.6em;
     color: #fff !important;
-    background-color: green !important;
     border-radius: 5px;
     padding-top: 5px;
     height: 22px;
+}
+
+p.label-success{
+    background-color: green !important;
+}
+
+p.label-heavy{
+    background-color: red !important;
+}
+
+p.label-moderate{
+    background-color: blue !important;
+}
+
+p.label-normal{
+    background-color: black !important;
 }

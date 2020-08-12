@@ -115,8 +115,10 @@
                   <t t-esc="env['ir.fields.converter'].text_from_html(seller_obj.sudo().profile_msg)"/>
                 </p>
                 <div class="subjects-container">
-                  <span class="skill" t-foreach="seller_obj.sudo().skill_ids" t-as="skill">
-                    <p class="label-success"><t t-esc="skill.skill_id.name"/></p>
+                  <span class="skill" t-foreach="seller_obj.sudo().group_by_skill_type().items()" t-as="skills">
+                    <t t-foreach="skills[1]" t-as="skill_name">
+                      <p t-att-class="'label-skill ' + skills[0].ranking" t-att-title="skills[0].name"><t t-esc="skill_name"/></p>
+                    </t>
                   </span>
                 </div>
               </div>

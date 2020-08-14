@@ -30,6 +30,5 @@ class ResPartner(models.Model):
         group_by = {}
         for skill in self.skill_ids:
             group_by.setdefault(skill.skill_type_id, []).append(skill.display_name)
-        print (group_by)
         return group_by
 

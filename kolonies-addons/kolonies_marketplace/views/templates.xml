@@ -35,6 +35,20 @@
         <div class="item oe_img_bg oe_custom_bg seller-profile-pic img-fluid rounded-circle d-block mx-auto shadow"
              t-attf-style="background-image: url('/web/image/res.partner/#{seller.id}/profile_image');background-size:180px;"></div>
       </xpath>
+      <xpath expr="//ul[hasclass('list-unstyled')]" position="replace"/>
+      <xpath expr="//span[hasclass('badge', 'badge-pill', 'badge-secondary', 'fa', 'fa-tags')]" position="replace">
+        <span class="badge badge-pill badge-secondary fa fa-tags" aria-label="badge" style="padding:5px 10px;">
+          <t t-esc="seller.seller_products_count()"/> Products
+        </span>
+      </xpath>
+      <xpath expr="//span[hasclass('badge', 'badge-pill', 'badge-secondary', 'fa', 'fa-line-chart')]" position="replace">
+        <span class="badge badge-pill badge-secondary fa fa-line-chart" aria-label="badge" style="padding:5px 10px;">
+          <t t-esc="sales_count"/> Sales
+        </span>
+      </xpath>
+      <xpath expr="//a[hasclass('pull-right')][1]" position="replace">
+        <a class="pull-right" target="_blank" href="/contactus" style="text-decoration: underline;">Signaler un abus</a>
+      </xpath>
     </template>
 
     <template id="seller_list_search" inherit_id="odoo_marketplace.sellers_list" name="Kolonies Seller List Search">

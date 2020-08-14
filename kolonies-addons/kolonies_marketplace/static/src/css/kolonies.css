@@ -64,23 +64,6 @@ div.img-container{
     margin-top: 2%;
 }
 
-div.rating-container{
-    font-size: 14px;
-    line-height: 1.42857;
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.87);
-    box-sizing: border-box;
-    -webkit-tap-highlight-color: transparent;
-    position: relative;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
-    float: left;
-    width: 50%;
-}
-
 div.card-block{
     font-size: 14px;
     line-height: 1.42857;
@@ -91,7 +74,7 @@ div.card-block{
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     margin-right: -15px;
-margin-left: -15px;
+    margin-left: -15px;
 }
 
 div.subjects-container{

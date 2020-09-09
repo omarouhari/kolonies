@@ -309,3 +309,7 @@ p.label-moderate{
 p.label-normal{
     background-color: black !important;
 }
+
+p.label-diploma{
+    background-color:#ffc107 !important;
+}

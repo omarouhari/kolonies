@@ -32,3 +32,9 @@ class ResPartner(models.Model):
             group_by.setdefault(skill.skill_type_id, []).append(skill.display_name)
         return group_by
 
+    def get_diploms(self):
+        diploms = []
+        for diplom in self.resume_line_ids:
+            if diplom.line_type_id.name == 'Diplôme':
+                diploms.append(diplom.name)
+        return diploms

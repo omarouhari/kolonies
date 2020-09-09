@@ -100,21 +100,18 @@
               <div class="col-xs-6 col-sm-6 col-md-6">
                 <a itemprop="url"
                    t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}">
-                  <span
-                      itemprop="image"
-                      t-field="seller_obj.sudo().profile_image"
-                      t-options="{'widget': 'image', 'style':'height: 100px;width: 100px;border-radius: 4px;', 'zoom': 'image', 'class':'img-fluid rounded-circle d-block shadow'}"
-                      t-att-alt="seller_obj.sudo().name"/>
+                  <span itemprop="image" t-field="seller_obj.sudo().profile_image"
+                        t-options="{'widget': 'image', 'style':'height: 100px;width: 100px;border-radius: 4px;', 'zoom': 'image', 'class':'img-fluid rounded-circle d-block shadow'}"
+                        t-att-alt="seller_obj.sudo().name"/>
                 </a>
               </div>
               <div>
                 <t t-call="kolonies_marketplace.seller_review_stars"/>
               </div>
             </div>
-
             <div class="row card-block">
               <div class="col-xs-11 col-sm-11 col-md-11" id="seller_name">
-                <h5 class="name">
+                <h4 class="name">
                   <a itemprop="name"
                      t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}"
                      t-field="seller_obj.sudo().name"/>
@@ -124,31 +121,23 @@
                   <t t-else="">
                     <i class="fa fa-circle" style="color: red;"/>
                   </t>
-                </h5>
-                <p class="description" style="font-size: larger">
-                  <t t-esc="env['ir.fields.converter'].text_from_html(seller_obj.sudo().profile_msg)"/>
-                </p>
-                <div class="subjects-container">
+                </h4>
+              </div>
+            </div>
+            <div class="row card-block">
+              <div class="col-xs-11 col-sm-11 col-md-11" id="resume_details">
+                <div>
+                  <span class="skill" t-foreach="seller_obj.sudo().get_diploms()" t-as="diplom">
+                    <p class="label-skill label-diploma" t-att-title="Diplômes"><t t-esc="diplom"/></p>
+                  </span>
+                </div>
+                <div>
                   <span class="skill" t-foreach="seller_obj.sudo().group_by_skill_type().items()" t-as="skills">
                     <t t-foreach="skills[1]" t-as="skill_name">
                       <p t-att-class="'label-skill ' + skills[0].ranking" t-att-title="skills[0].name"><t t-esc="skill_name"/></p>
                     </t>
                   </span>
                 </div>
-              </div>
-            </div>
-            <div id="seller_review" class="row card-block">
-              <div class="col-xs-4 col-sm-4 col-md-4 text-left btn-container price-label-container">
-                <span class="price-label">
-                  From<br/>
-                  <t t-esc="seller_obj.session_price" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/>
-                </span>
-              </div>
-              <div id="seller_other_info" class="col-xs-8 col-sm-8 col-md-8 text-right btn-container pull-right view-profile">
-                <a class="btn-view-profile view-profile pull-right" itemprop="name"
-                   t-attf-href="/seller/profile/#{seller_obj.sudo().url_handler if seller_obj.sudo().url_handler else seller_obj.sudo().id}?fw=#{seller_obj.partner_website_id.id}">
-                  <u>View Profile</u>
-                </a>
               </div>
             </div>
           </div>

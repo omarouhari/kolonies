@@ -3,7 +3,7 @@
   <data>
 
     <record id="hr_resume_type_degree" model="hr.resume.line.type">
-      <field name="name">Dilpôme</field>
+      <field name="name">Diplôme</field>
     </record>
 
   </data>

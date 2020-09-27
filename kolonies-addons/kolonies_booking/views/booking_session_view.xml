@@ -108,7 +108,7 @@
               <label for="name"/>
               <h1>
                 <field name="name" placeholder="Title"/>
-                <field name="is_online_session" invisible="0"/>
+                <field name="is_online_session" invisible="1"/>
               </h1>
             </div>
             <group name="general_info">

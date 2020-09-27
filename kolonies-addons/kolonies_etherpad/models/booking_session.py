@@ -15,6 +15,8 @@ class BookingSession(models.Model):
 
     def button_confirm(self):
         res = super(BookingSession, self).button_confirm()
+        if self.is_online_session:
+            return res
         endpoint = self.env['ir.config_parameter'].sudo().get_param('etherpad_endpoint')
         if not endpoint:
             ValidationError(_('The etherpad endpoint is not defined in system parameters. Please contact your system administrator.'))

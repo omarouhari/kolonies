@@ -1,0 +1,770 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kolonies_booking
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-27 11:58+0000\n"
+"PO-Revision-Date: 2020-09-27 11:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_needaction
+msgid "Action Needed"
+msgstr "Nécessite une action"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__active
+msgid "Active"
+msgstr "actif"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_ids
+msgid "Activities"
+msgstr "Activités"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité d'exception de décoration"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_state
+msgid "Activity State"
+msgstr "Status de l'activité"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__allday
+msgid "All Day"
+msgstr "Toute la journée"
+
+#. module: kolonies_booking
+#: code:addons/kolonies_booking/models/sale_order_line.py:0
+#, python-format
+msgid "Appointment"
+msgstr "Rendez-vous"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_ir_attachment
+msgid "Attachment"
+msgstr "Pièce jointe"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_attachment_count
+msgid "Attachment Count"
+msgstr "Compte des pièces jointes"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__is_attendee
+msgid "Attendee"
+msgstr "Participant"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__attendee_status
+msgid "Attendee Status"
+msgstr "État du participant"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__partner_ids
+msgid "Attendees"
+msgstr "Participants"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__booking_date
+msgid "Booking Date"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_booking_session
+#: model:ir.model.fields,field_description:kolonies_booking.field_sale_order_line__booking_session_id
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "Booking Session"
+msgstr "Session de réservation"
+
+#. module: kolonies_booking
+#: model:ir.module.category,name:kolonies_booking.booking_session_category
+msgid "Booking Session Access"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_res_partner__booking_session_count
+#: model:ir.model.fields,field_description:kolonies_booking.field_res_users__booking_session_count
+msgid "Booking Session Count"
+msgstr "Numéro de la session de réservation"
+
+#. module: kolonies_booking
+#: model:ir.actions.act_window,name:kolonies_booking.booking_session_act_window
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__booking_session_ids
+#: model:ir.model.fields,field_description:kolonies_booking.field_calendar_event__booking_session_ids
+#: model:ir.model.fields,field_description:kolonies_booking.field_res_partner__booking_session_ids
+#: model:ir.model.fields,field_description:kolonies_booking.field_res_users__booking_session_ids
+#: model:ir.ui.menu,name:kolonies_booking.booking_session_menu
+#: model:ir.ui.menu,name:kolonies_booking.booking_session_menu_buyer
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_calendar_view
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_tree_view
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.marketplace_seller_form_view_inherit
+msgid "Booking Sessions"
+msgstr "Sessions des réservations"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__booking_slot_id
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "Booking Slot"
+msgstr "Créneau horaire de réservation"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__byday
+msgid "By day"
+msgstr "Par jour"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_calendar_event
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__event_id
+msgid "Calendar Event"
+msgstr "Calendrier de l'événement"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__cancelled
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Confirm"
+msgstr "Confirmer"
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__open
+msgid "Confirmed"
+msgstr "Confirmé"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__display_start
+msgid "Date"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__day
+msgid "Day"
+msgstr "Jour"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__description
+msgid "Description"
+msgstr "La description"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__res_id
+msgid "Document ID"
+msgstr "Référence du document"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__res_model_id
+msgid "Document Model"
+msgstr "Modèle de document"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__res_model
+msgid "Document Model Name"
+msgstr "Nom de modèle de document"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__attachment_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Documents"
+msgstr "documents"
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__duration
+#: model:ir.model.fields,field_description:kolonies_booking.field_sale_order_line__duration_booked
+msgid "Duration"
+msgstr "Durée"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__stop_date
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__stop_datetime
+msgid "End Datetime"
+msgstr "Date de fin"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__end_time
+msgid "End Time"
+msgstr "Heure de fin"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__end_time
+msgid "Enter slot end time."
+msgstr "Entrez l'heure de fin d'emplacement."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__start_time
+msgid "Enter slot start time."
+msgstr "Entrez l'heure de début d'emplacement."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__display_time
+msgid "Event Time"
+msgstr "Heure de l'événement"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Finish"
+msgstr "terminer"
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__finished
+msgid "Finished"
+msgstr "Terminé"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Abonnés (Canaux)"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__fr
+msgid "Fri"
+msgstr "Ven."
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__id
+msgid "ID"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_needaction
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages demandent votre attention."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_has_error
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si actif, certains messages ont une erreur de livraison."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__active
+msgid ""
+"If the active field is set to false, it will allow you to hide the event "
+"alarm information without removing it."
+msgstr ""
+"Si le champ actif est décoché, il vous permet de désactiver l'alarme de cet "
+"événement sans la supprimer."
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__in_progress
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_is_follower
+msgid "Is Follower"
+msgstr "Est un abonné"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__is_online_session
+#: model:ir.model.fields,field_description:kolonies_booking.field_product_product__is_online_session
+#: model:ir.model.fields,field_description:kolonies_booking.field_product_template__is_online_session
+msgid "Is Online Session"
+msgstr "Session en ligne"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__is_highlighted
+msgid "Is the Event Highlighted"
+msgstr "L'événement est-il mis en avant"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Join Session"
+msgstr "Joignez-vous à la session"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__rrule_type
+msgid "Let the event automatically repeat at that interval"
+msgstr "Laisser l'événement se répéter automatiquement à chaque intervalle"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__location
+msgid "Location"
+msgstr "Lieu"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__location
+msgid "Location of Event"
+msgstr "Emplacement de l'événement"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: kolonies_booking
+#: model:res.groups,name:kolonies_booking.booking_session_manager
+msgid "Manager"
+msgstr "Gestionnaire"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__name
+msgid "Meeting Subject"
+msgstr "Titre de l'évènement"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur d'envoi du message"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_ids
+msgid "Messages"
+msgstr "messages"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__mo
+msgid "Mon"
+msgstr "Lun."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Date limite de l'activité à venir"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé d'activité suivant"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type d'activités à venir"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages exigeant une action"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec des erreurs d'envoi"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Nombre de messages non lus"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__month_by
+msgid "Option"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__user_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__page_uuid
+msgid "Page UUID"
+msgstr "page UUID"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__page_web_url
+msgid "Page Web Url"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__attendee_ids
+msgid "Participant"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__participant_count
+msgid "Participant Count"
+msgstr "participant comte"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Participants"
+msgstr "Les participants"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__partner_id
+msgid "Partner-related data of the user"
+msgstr "Données du partenaire lié à l'utilisateur"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Plan"
+msgstr ""
+
+#. module: kolonies_booking
+#: model:ir.model.fields.selection,name:kolonies_booking.selection__booking_session__state__planed
+msgid "Planed"
+msgstr "rabotés"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__privacy
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__product_id
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "Product"
+msgstr "Article"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_product_template
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__rrule_type
+msgid "Recurrence"
+msgstr "Récurrence"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__end_type
+msgid "Recurrence Termination"
+msgstr "Fin de la récurrence"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__recurrency
+msgid "Recurrent"
+msgstr "Récurrent"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__recurrent_id
+msgid "Recurrent ID"
+msgstr "ID récurrent"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__recurrent_id_date
+msgid "Recurrent ID date"
+msgstr "Id. de la date récurrente"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__recurrency
+msgid "Recurrent Meeting"
+msgstr "Rendez-vous récurrents"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__rrule
+msgid "Recurrent Rule"
+msgstr "Règle de récurrence"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__alarm_ids
+msgid "Reminders"
+msgstr "Rappels"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__count
+msgid "Repeat"
+msgstr "Répéter"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__interval
+msgid "Repeat Every"
+msgstr "Répéter tous les"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__final_date
+msgid "Repeat Until"
+msgstr "Répéter jusqu'au"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__interval
+msgid "Repeat every (Days/Week/Month/Year)"
+msgstr "Répéter chaque (Jour/Semaine/Mois/Année)"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__count
+msgid "Repeat x times"
+msgstr "Répéter x fois"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Reset To Draft"
+msgstr "Remettre en brouillon"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__partner_id
+msgid "Responsible"
+msgstr "Responsable"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__activity_user_id
+msgid "Responsible User"
+msgstr "Responsable"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur d'envoi SMS"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: kolonies_booking
+#: model:ir.model,name:kolonies_booking.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne de bons de commande"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__sa
+msgid "Sat"
+msgstr "Sam."
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "Seller"
+msgstr "Vendeur"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__show_as
+msgid "Show Time as"
+msgstr "Afficher l'heure comme"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__start
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Start"
+msgstr "Démarrer"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__start_date
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__start_datetime
+msgid "Start DateTime"
+msgstr "Date de début"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__start_time
+msgid "Start Time"
+msgstr "Heure de début"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__start
+msgid "Start date of an event, without time for full days events"
+msgstr ""
+"Date de début d'événement, sans heure pour les événements durant toute la "
+"journée"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__state
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_search_view
+msgid "State"
+msgstr "État"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifiée : activités futures"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__stop
+msgid "Stop"
+msgstr "Arrêter"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__stop
+msgid "Stop date of an event, without time for full days events"
+msgstr ""
+"Date de fin d'événement, sans heure pour les événements durant toute la "
+"journée"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__su
+msgid "Sun"
+msgstr "Dim."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__survey_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Surveys"
+msgstr "Sondages"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__categ_ids
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: kolonies_booking
+#: code:addons/kolonies_booking/models/booking_session.py:0
+#, python-format
+msgid "The session is not yet started or has already done!"
+msgstr "La session n'est pas encore commencée ou est déjà terminée !"
+
+#. module: kolonies_booking
+#: model_terms:ir.actions.act_window,help:kolonies_booking.booking_session_act_window
+msgid "There is no examples click here to add new ModelTitle."
+msgstr ""
+"Il n'y a pas d'exemples, cliquez ici pour ajouter une nouvelle ModelTitle."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__th
+msgid "Thu"
+msgstr "Jeu."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__event_tz
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: kolonies_booking
+#: model_terms:ir.ui.view,arch_db:kolonies_booking.booking_session_form_view
+msgid "Title"
+msgstr "Titre"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__tu
+msgid "Tue"
+msgstr "Mar."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d'activité d'exception enregistrée"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_unread
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Compteur de messages non lus"
+
+#. module: kolonies_booking
+#: model:res.groups,name:kolonies_booking.booking_session_user
+msgid "User"
+msgstr "Utilisateur"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,help:kolonies_booking.field_booking_session__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__we
+msgid "Wed"
+msgstr "Mer."
+
+#. module: kolonies_booking
+#: model:ir.model.fields,field_description:kolonies_booking.field_booking_session__week_list
+msgid "Weekday"
+msgstr "Jour de la semaine"

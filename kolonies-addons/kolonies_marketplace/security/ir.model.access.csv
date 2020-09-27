@@ -17,4 +17,4 @@ hr_skill_access_user,hr_skill_accessuser,hr_skills.model_hr_skill,odoo_marketpla
 hr_skill_level_access_user,hr_skill_level_accessuser,hr_skills.model_hr_skill_level,odoo_marketplace.marketplace_seller_group,1,1,1,0
 seller_localisation_access_user,seller_localisation_accessuser,model_seller_localisation,odoo_marketplace.marketplace_seller_group,1,1,1,0
 
-
+mail_activity_type_access_reader,mail_activity_type_access reader,mail.model_mail_activity_type,,1,0,0,0

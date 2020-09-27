@@ -2,6 +2,7 @@
 
 import uuid
 from odoo import api, fields, models, _
+from odoo.exceptions import UserError
 
 
 class BookingSession(models.Model):
@@ -16,7 +17,7 @@ class BookingSession(models.Model):
     state = fields.Selection([('draft', 'Draft'), ('planed', 'Planed'), ('open', 'Confirmed'), ('in_progress', 'In Progress'),
                               ('finished', 'Finished'), ('cancelled', 'Cancelled')], default='draft', required=True)
     page_uuid = fields.Char('Page UUID', required=False)
-    page_web_url = fields.Char('Page Web Url', required=False, compute='_compute_page_web_url', store=True)
+    page_web_url = fields.Char('Page Web Url', compute='_compute_page_web_url', store=True, default='')
     product_id = fields.Many2one('product.product', 'Product')
     day = fields.Selection(related='booking_slot_id.slot_config_id.name', readonly=True, store=True)
     start_time = fields.Float(related='booking_slot_id.time_slot_id.start_time', readonly=True, store=True)
@@ -24,6 +25,7 @@ class BookingSession(models.Model):
     event_id = fields.Many2one('calendar.event', 'Calendar Event', required=True, ondelete="restrict")
     participant_count = fields.Integer('Participant Count', compute='_compute_participant_count', store=True, required=False)
     booking_date = fields.Date('Booking Date')
+    is_online_session = fields.Boolean(related='product_id.is_online_session', readonly=False, store=True)
 
     def button_plan(self):
         self.ensure_one()
@@ -38,7 +40,9 @@ class BookingSession(models.Model):
     def button_start(self):
         self.ensure_one()
         self.state = 'in_progress'
-        return self.button_join_meeting()
+        if self.is_online_session:
+            return self.button_join_meeting()
+        return True
 
     def button_finished(self):
         self.ensure_one()
@@ -72,7 +76,7 @@ class BookingSession(models.Model):
             base_url += '/web/booking/session/'
         else:
             base_url += 'web/booking/session/'
-        for record in self:
+        for record in self.filtered(lambda bs: bs.is_online_session):
             record.page_web_url = base_url + (record.page_uuid or '')
 
     def button_open_participant_open(self):
@@ -94,6 +98,8 @@ class BookingSession(models.Model):
 
     def button_join_meeting(self):
         self.ensure_one()
+        if not self.state == 'in_progress':
+            raise UserError(_('The session is not yet started or has already done!'))
         return {
             'type': 'ir.actions.act_url',
             'target': 'new',

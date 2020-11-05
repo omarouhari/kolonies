@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-13 10:37+0000\n"
-"PO-Revision-Date: 2020-05-13 10:37+0000\n"
+"POT-Creation-Date: 2020-11-05 13:23+0000\n"
+"PO-Revision-Date: 2020-11-05 13:23+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "Address"
-msgstr "Adresse"
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__active
+msgid "Active"
+msgstr "Actif"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__average_rating
@@ -55,6 +55,11 @@ msgstr "Pays"
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__resume_line_ids
 msgid "Diplomas"
 msgstr "Diplômes"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_employee_skill__employee_id
@@ -109,6 +114,13 @@ msgstr "Nouveau Vendeur"
 #: model:ir.model,name:kolonies_marketplace.model_product_template
 msgid "Product Template"
 msgstr "Modèle d'article"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__product_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__product_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_profile
+msgid "Products"
+msgstr "Articles"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__partner_type__professional
@@ -180,6 +192,17 @@ msgstr "Niveau de compétence pour un vendeur"
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
 msgid "Skills"
 msgstr "Compétences"
+
+#. module: kolonies_marketplace
+#: code:addons/kolonies_marketplace/models/website.py:0
+#, python-format
+msgid "There is already a default marketplace website!"
+msgstr "Il existe déjà un site définie comme par défaut pour la marketpace."
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__is_default_website_marketplace
+msgid "Is Default Website Marketplace"
+msgstr "Est siteweb de marketplace par défaut"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__lang_ids

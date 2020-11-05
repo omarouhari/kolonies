@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import api, fields, models, _, SUPERUSER_ID
+from odoo.exceptions import ValidationError
 
 
 class ResPartner(models.Model):
@@ -16,14 +17,17 @@ class ResPartner(models.Model):
 
     def create_website(self):
         values = self._prepare_website()
-        website = self.env.ref('website.default_website', raise_if_not_found=False).copy(default=values)
-        self.partner_website_id = website.id
+        website = self.env['website'].search([('is_default_website_marketplace', '=', True)], limit=1)
+        if not website:
+            raise ValidationError(_('The default website of marketplace is not defined. '
+                                    'Thanks to set the website or contact your system administrator'))
+        self.partner_website_id = website.copy(default=values).id
         return True
 
     def _prepare_website(self):
         return {
             'name': _('Website of %s') % self.name,
-            'company_id': self.company_id or self.env.ref('base.main_company', raise_if_not_found=False).id,
+            'company_id': self.company_id.id or self.env.ref('base.main_company', raise_if_not_found=False).id,
             'default_lang_id': self.get_lang().id,
             'channel_id': self.create_channel().id,
             'is_seller': True,

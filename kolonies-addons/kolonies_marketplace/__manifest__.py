@@ -24,6 +24,7 @@
         # views
         'views/menu.xml',
         'views/templates.xml',
+        'views/website_view.xml',
         'views/res_partner_view.xml',
         'views/hr_skill_type_view.xml',
         'views/seller_location_view.xml',

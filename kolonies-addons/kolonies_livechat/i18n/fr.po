@@ -59,8 +59,8 @@ msgstr "site partenaire"
 msgid ""
 "The default website of marketplace is not defined. Thanks to set the website"
 " or contact your system administrator"
-msgstr "Le site par defaut n'est pas paramétré dans votre base."
-"Merci de définir un site par défaut pour pour la marketplace ou contacter votre administrateur système."
+msgstr "Le site par defaut n'est pas paramétré dans votre base. "
+"Merci de définir un site par défaut pour la marketplace ou contacter votre administrateur système."
 
 #. module: kolonies_livechat
 #: code:addons/kolonies_livechat/models/res_partner.py:0

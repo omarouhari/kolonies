@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-05 13:23+0000\n"
-"PO-Revision-Date: 2020-11-05 13:23+0000\n"
+"POT-Creation-Date: 2020-11-08 22:42+0000\n"
+"PO-Revision-Date: 2020-11-08 22:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,19 +37,56 @@ msgid "Average Rating: Low to High"
 msgstr "Note moyenne : croissant"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+#: model:ir.ui.menu,name:kolonies_marketplace.wk_buyer_dashboard
+msgid "Buyer Dashboard"
+msgstr "Tableau de bord acheteur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__city
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_form
 msgid "City"
 msgstr "Ville"
 
 #. module: kolonies_marketplace
-#: model:ir.model,name:kolonies_marketplace.model_res_partner
-msgid "Contact"
-msgstr "Contact"
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__hr_skill_type__ranking__label-success
+msgid "Cls. 1"
+msgstr "Classe 1"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__hr_skill_type__ranking__label-heavy
+msgid "Cls. 2"
+msgstr "Classe 2"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__hr_skill_type__ranking__label-moderate
+msgid "Cls. 3"
+msgstr "Classe 3"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields.selection,name:kolonies_marketplace.selection__hr_skill_type__ranking__label-normal
+msgid "Cls. 4"
+msgstr "Classe 4"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_res_partner
+msgid "Contact"
+msgstr "Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__country_id
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_form
 msgid "Country"
 msgstr "Pays"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__create_date
+msgid "Created on"
+msgstr "Créé le"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__resume_line_ids
@@ -68,9 +105,34 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "Internal notes..."
-msgstr "Notes internes ..."
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__id
+msgid "ID"
+msgstr ""
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__is_default_website_marketplace
+msgid "Is Default Website Marketplace"
+msgstr "Est siteweb de marketplace par défaut"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__is_seller
+msgid "Is Website Seller"
+msgstr "Est SiteWeb Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__one
@@ -83,24 +145,33 @@ msgid "Level Two"
 msgstr "Niveau Deux"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "Localisation Name"
-msgstr "Nom de la localisation"
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_form
+msgid "Localisation"
+msgstr "Localisation"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_form
 msgid "Localisation Served"
 msgstr "Localisation desservie"
 
 #. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__localisation_ids
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__localisation_ids
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_tree
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
-msgid "Locations Served"
+msgid "Localisations Served"
 msgstr "Localisations desservies"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__name
+msgid "Name"
+msgstr "Nom"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__neighborhood
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__neighborhood
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_seller_localisation__neighborhood
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_view_form
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
 msgid "Neighborhood"
 msgstr "Quartier"
@@ -128,6 +199,11 @@ msgid "Professional"
 msgstr "Professionnel"
 
 #. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_skill_type__ranking
+msgid "Ranking"
+msgstr "Classement"
+
+#. module: kolonies_marketplace
 #: model:ir.model,name:kolonies_marketplace.model_hr_resume_line
 msgid "Resumé line of an employee"
 msgstr "Diplôme de Vendeur"
@@ -147,6 +223,11 @@ msgid "Sale Order Lines"
 msgstr "Lignes de commande"
 
 #. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_profile
+msgid "Sales"
+msgstr "Ventes"
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_product_product__sales_count_stored
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_product_template__sales_count_stored
 msgid "Sales Count"
@@ -163,6 +244,26 @@ msgid "Sales count: Low to High"
 msgstr "Nombre de ventes : croissant"
 
 #. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_search_box
+msgid "Search Localisation"
+msgstr "Recherche Localisation"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_localisation_search_box
+msgid "Search Localisation…"
+msgstr "Recherche Localisation ..."
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_skill_search_box
+msgid "Search Skills"
+msgstr "Recherche des compétences"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_skill_search_box
+msgid "Search Skills…"
+msgstr "Recherche des compétences ..."
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_employee_skill__partner_id
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_resume_line__partner_id
 msgid "Seller"
@@ -173,13 +274,54 @@ msgstr "Vendeur"
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__seller_level
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
 msgid "Seller Level"
-msgstr "Niveau Seller"
+msgstr "Niveau Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_seller_localisation
+msgid "Seller Localisation"
+msgstr "Localisation Vendeur"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__seller_ppg
+msgid "Seller PPG"
+msgstr "Vendeur PPG"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__seller_ppr
+msgid "Seller PPR"
+msgstr "Vendeur PPR"
 
 #. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__partner_type
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__partner_type
 msgid "Seller Type"
 msgstr "Type de vendeur"
+
+#. module: kolonies_marketplace
+#: model:website.menu,name:kolonies_marketplace.menu_sellers_list
+msgid "Sellers List"
+msgstr "Liste des vendeurs"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_hr_skill_type__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: kolonies_marketplace
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__session_price
+#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__session_price
+msgid "Session Price"
+msgstr "Session Prix"
+
+#. module: kolonies_marketplace
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_profile
+msgid "Signaler un abus"
+msgstr "Signaler un abus"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_hr_skill_type
+msgid "Skill Type"
+msgstr "Type de Compétence"
 
 #. module: kolonies_marketplace
 #: model:ir.model,name:kolonies_marketplace.model_hr_employee_skill
@@ -200,27 +342,6 @@ msgid "There is already a default marketplace website!"
 msgstr "Il existe déjà un site définie comme par défaut pour la marketpace."
 
 #. module: kolonies_marketplace
-#: model:ir.model.fields,field_description:kolonies_marketplace.field_website__is_default_website_marketplace
-msgid "Is Default Website Marketplace"
-msgstr "Est siteweb de marketplace par défaut"
-
-#. module: kolonies_marketplace
-#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__lang_ids
-#: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__lang_ids
-msgid "Spoken Languages"
-msgstr "Langues parlées"
-
-#. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "Street 2..."
-msgstr "Rue 2 ..."
-
-#. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "Street..."
-msgstr "Rue ..."
-
-#. module: kolonies_marketplace
 #: model:ir.model.fields.selection,name:kolonies_marketplace.selection__res_partner__seller_level__top_rated
 msgid "Top Rated Seller"
 msgstr "Meilleur Vendeur"
@@ -231,6 +352,16 @@ msgid "University Student"
 msgstr "Étudiant universitaire"
 
 #. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: kolonies_marketplace
+#: model:ir.model,name:kolonies_marketplace.model_website
+msgid "Website"
+msgstr "Site Web"
+
+#. module: kolonies_marketplace
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_partner__website_category_ids
 #: model:ir.model.fields,field_description:kolonies_marketplace.field_res_users__website_category_ids
 #: model_terms:ir.ui.view,arch_db:kolonies_marketplace.wk_seller_form_view_inherit
@@ -238,6 +369,6 @@ msgid "Website Categories"
 msgstr "Catégories dans Site Web"
 
 #. module: kolonies_marketplace
-#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.res_partner_view_form
-msgid "ZIP"
-msgstr "Code postal"
+#: model_terms:ir.ui.view,arch_db:kolonies_marketplace.seller_profile
+msgid "badge"
+msgstr "Badge"

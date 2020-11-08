@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="website_view_form_inherit" model="ir.ui.view">
+      <field name="name">website.view.form.inherit</field>
+      <field name="model">website</field>
+      <field name="inherit_id" ref="odoo_marketplace.mp_config_view_website_form"/>
+      <field name="arch" type="xml">
+        <field name="mp_recently_product" position="after">
+          <field name="seller_ppr" attrs="{'readonly': [('is_default_website_marketplace', '=', False)]}"/>
+          <field name="seller_ppg" attrs="{'readonly': [('is_default_website_marketplace', '=', False)]}"/>
+          <field name="is_default_website_marketplace"/>
+        </field>
+      </field>
+    </record>
+
+  </data>
+</odoo>

@@ -80,7 +80,8 @@
                     groups="kolonies_booking.booking_session_manager"/>
             <button name="button_start" string="Start" type="object" states="open" class="btn-primary"
                     groups="kolonies_booking.booking_session_manager"/>
-            <button name="button_join_meeting" string="Join Session" type="object" class="btn-primary" states="in_progress"/>
+            <button name="button_join_meeting" string="Join Session" type="object" class="btn-primary"
+                    attrs="{'invisible': ['|', ('is_online_session', '=', False), ('state', '!=', 'in_progress')]}"/>
             <button name="button_finished" string="Finish" type="object" states="in_progress" class="btn-primary"
                     groups="kolonies_booking.booking_session_manager"/>
             <button name="button_cancel"
@@ -107,6 +108,7 @@
               <label for="name"/>
               <h1>
                 <field name="name" placeholder="Title"/>
+                <field name="is_online_session" invisible="1"/>
               </h1>
             </div>
             <group name="general_info">
@@ -122,7 +124,8 @@
                 <field name="user_id" invisible="1"/>
               </group>
             </group>
-            <group name="technical_data" groups="odoo_marketplace.marketplace_manager_group">
+            <group name="technical_data" groups="odoo_marketplace.marketplace_manager_group"
+                   attrs="{'invisible': [('is_online_session', '=', False)]}">
               <field name="page_uuid"/>
               <field name="page_web_url" widget="url"/>
             </group>

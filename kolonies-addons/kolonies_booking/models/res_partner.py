@@ -12,7 +12,8 @@ class ResPartner(models.Model):
     def check_booking_session_exist(self, booking_slot=False, product=False, booking_date=False):
         return self.booking_session_ids.filtered(lambda bs: bs.booking_slot_id == booking_slot
                                                             and bs.product_id == product
-                                                            and bs.booking_date == booking_date)
+                                                            and bs.booking_date == booking_date
+                                                            and bs.state not in ('finished', 'cancelled'))
 
     def _compute_booking_session_count(self):
         for record in self:

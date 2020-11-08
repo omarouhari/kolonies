@@ -6,3 +6,4 @@ from . import calendar_event
 from . import sale_order_line
 from . import booking_session
 from . import ir_attachment
+from . import product_template

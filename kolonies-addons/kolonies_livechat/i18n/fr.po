@@ -1,0 +1,81 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kolonies_livechat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-05 12:54+0000\n"
+"PO-Revision-Date: 2020-11-05 12:54+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid "Channel of %s"
+msgstr "Canal de% s"
+
+#. module: kolonies_livechat
+#: model:ir.model,name:kolonies_livechat.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid "Have a question? Chat with us."
+msgstr "Avoir une question? Discute avec nous."
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid ""
+"Hello!\n"
+"How can I help you?"
+msgstr ""
+"salut!\n"
+"Comment puis-je vous aider?"
+
+#. module: kolonies_livechat
+#: model:ir.model,name:kolonies_livechat.model_im_livechat_channel
+msgid "Livechat Channel"
+msgstr "Canal de Live Chat"
+
+#. module: kolonies_livechat
+#: model:ir.model.fields,field_description:kolonies_livechat.field_res_partner__partner_website_id
+#: model:ir.model.fields,field_description:kolonies_livechat.field_res_users__partner_website_id
+msgid "Partner Website"
+msgstr "site partenaire"
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid ""
+"The default website of marketplace is not defined. Thanks to set the website"
+" or contact your system administrator"
+msgstr "Le site par defaut n'est pas paramétré dans votre base."
+"Merci de définir un site par défaut pour pour la marketplace ou contacter votre administrateur système."
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid "Type your message here ..."
+msgstr "Tapez votre message ici ..."
+
+#. module: kolonies_livechat
+#: model:ir.model.fields,field_description:kolonies_livechat.field_res_partner__user_ids
+#: model:ir.model.fields,field_description:kolonies_livechat.field_res_users__user_ids
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: kolonies_livechat
+#: code:addons/kolonies_livechat/models/res_partner.py:0
+#, python-format
+msgid "Website of %s"
+msgstr "Site web de% s"

@@ -1,0 +1,52 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* kolonies_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-08 22:39+0000\n"
+"PO-Revision-Date: 2020-11-08 22:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: kolonies_website
+#: model:ir.model,name:kolonies_website.model_res_partner
+msgid "Contact"
+msgstr "Vendeur"
+
+#. module: kolonies_website
+#: model:ir.model,name:kolonies_website.model_ir_http
+msgid "HTTP Routing"
+msgstr "Routage HTTP"
+
+#. module: kolonies_website
+#: model_terms:ir.ui.view,arch_db:kolonies_website.kolonies_search_shop
+msgid "Search Localisation"
+msgstr "Recherche Localisation"
+
+#. module: kolonies_website
+#: model_terms:ir.ui.view,arch_db:kolonies_website.kolonies_search_shop
+msgid "Search Localisation…"
+msgstr "Recherche Localisation ..."
+
+#. module: kolonies_website
+#: model_terms:ir.ui.view,arch_db:kolonies_website.kolonies_search_shop
+msgid "Search Skills"
+msgstr "Recherche des compétences"
+
+#. module: kolonies_website
+#: model_terms:ir.ui.view,arch_db:kolonies_website.kolonies_search_shop
+msgid "Search Skills…"
+msgstr "Recherche des compétences ..."
+
+#. module: kolonies_website
+#: model:ir.model.fields,field_description:kolonies_website.field_res_partner__user_ids
+#: model:ir.model.fields,field_description:kolonies_website.field_res_users__user_ids
+msgid "Users"
+msgstr "Utilisateurs"

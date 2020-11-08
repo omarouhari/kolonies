@@ -24,6 +24,7 @@
         # views
         'views/res_partner_view.xml',
         'views/booking_session_view.xml',
+        'views/product_template_view.xml',
     ],
     'application': False,
     'installable': True,
